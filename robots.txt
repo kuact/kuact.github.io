@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://kuact.github.io/sitemap.xml
+Sitemap: https://www.kuact.com/sitemap.xml

@@ -2,30 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>生活不在别处</title>
-    <link>https://kuact.github.io/</link>
+    <link>https://www.kuact.com/</link>
     <description>Recent content on 生活不在别处</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Jan 2006 21:38:52 +0800</lastBuildDate>
     
-	<atom:link href="https://kuact.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.kuact.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://kuact.github.io/about/</link>
+      <link>https://www.kuact.com/about/</link>
       <pubDate>Sun, 01 Jan 2006 21:38:52 +0800</pubDate>
       
-      <guid>https://kuact.github.io/about/</guid>
+      <guid>https://www.kuact.com/about/</guid>
       <description>过去再美好，也只是回忆；未来再艰难，也要自己写 — 坚持到底</description>
     </item>
     
     <item>
+      <title>Life - 为了忘却的纪念</title>
+      <link>https://www.kuact.com/post/2006-02-28-life---%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/</link>
+      <pubDate>Tue, 28 Feb 2006 14:04:52 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2006-02-28-life---%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/</guid>
+      <description>我不是一个会写字的家伙，凡事大事小事都不愿提及，不愿提及久而久之也就慢慢淡忘了。哪怕是初恋的她，真的有忘记她生日的那一天&amp;hellip; 在我</description>
+    </item>
+    
+    <item>
+      <title>飘过香港的日子 — 换汇</title>
+      <link>https://www.kuact.com/post/2006-02-28-%E9%A3%98%E8%BF%87%E9%A6%99%E6%B8%AF%E7%9A%84%E6%97%A5%E5%AD%90--%E6%8D%A2%E6%B1%87/</link>
+      <pubDate>Tue, 28 Feb 2006 13:50:20 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2006-02-28-%E9%A3%98%E8%BF%87%E9%A6%99%E6%B8%AF%E7%9A%84%E6%97%A5%E5%AD%90--%E6%8D%A2%E6%B1%87/</guid>
+      <description>2006年，港币那会还比人民币值钱…… 今天晚上兴冲冲的跑到HK的一家汇丰银行（上面有银联标记），用招商银行一卡通取钱，取了500HK，上网查</description>
+    </item>
+    
+    <item>
+      <title>飘过香港的日子 - 北角上空的飞鹰</title>
+      <link>https://www.kuact.com/post/2006-02-15-%E9%A3%98%E8%BF%87%E9%A6%99%E6%B8%AF%E7%9A%84%E6%97%A5%E5%AD%90---%E5%8C%97%E8%A7%92%E4%B8%8A%E7%A9%BA%E7%9A%84%E9%A3%9E%E9%B9%B0/</link>
+      <pubDate>Wed, 15 Feb 2006 13:11:03 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2006-02-15-%E9%A3%98%E8%BF%87%E9%A6%99%E6%B8%AF%E7%9A%84%E6%97%A5%E5%AD%90---%E5%8C%97%E8%A7%92%E4%B8%8A%E7%A9%BA%E7%9A%84%E9%A3%9E%E9%B9%B0/</guid>
+      <description>我上班的地方在北角（north point），在31层的办公室远望，从来没有如此近的距离看到惬意游荡的飞鹰。对面有座青绿的山峰，沿着山沿一路是</description>
+    </item>
+    
+    <item>
       <title>飘过新加坡的日子 - 虎航澳门飞新加坡 (2005)</title>
-      <link>https://kuact.github.io/post/2006-02-09-%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E8%99%8E%E8%88%AA%E6%BE%B3%E9%97%A8%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1/</link>
+      <link>https://www.kuact.com/post/2006-02-09-%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E8%99%8E%E8%88%AA%E6%BE%B3%E9%97%A8%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1/</link>
       <pubDate>Wed, 08 Feb 2006 16:06:38 +0000</pubDate>
       
-      <guid>https://kuact.github.io/post/2006-02-09-%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E8%99%8E%E8%88%AA%E6%BE%B3%E9%97%A8%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1/</guid>
+      <guid>https://www.kuact.com/post/2006-02-09-%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E8%99%8E%E8%88%AA%E6%BE%B3%E9%97%A8%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1/</guid>
       <description>想必越来越多的驴子们会选择廉价航空虎航/亚航的飞机，借着本次新加坡归来把相关的情况给大家介绍一下，在大家选择行程的时候可以借鉴 签证 新加坡35</description>
     </item>
     
