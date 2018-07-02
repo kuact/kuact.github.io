@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>生活不在别处</title>
+    <link>https://kuact.github.io/</link>
+    <description>Recent content on 生活不在别处</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Jan 2006 21:38:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://kuact.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://kuact.github.io/about/</link>
+      <pubDate>Sun, 01 Jan 2006 21:38:52 +0800</pubDate>
+      
+      <guid>https://kuact.github.io/about/</guid>
+      <description>过去再美好，也只是回忆；未来再艰难，也要自己写 — 坚持到底</description>
+    </item>
+    
+    <item>
+      <title>飘过新加坡的日子 - 虎航澳门飞新加坡 (2005)</title>
+      <link>https://kuact.github.io/post/2006-02-09-%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E8%99%8E%E8%88%AA%E6%BE%B3%E9%97%A8%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1/</link>
+      <pubDate>Wed, 08 Feb 2006 16:06:38 +0000</pubDate>
+      
+      <guid>https://kuact.github.io/post/2006-02-09-%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E8%99%8E%E8%88%AA%E6%BE%B3%E9%97%A8%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1/</guid>
+      <description>想必越来越多的驴子们会选择廉价航空虎航/亚航的飞机，借着本次新加坡归来把相关的情况给大家介绍一下，在大家选择行程的时候可以借鉴 签证 新加坡35</description>
+    </item>
+    
+  </channel>
+</rss>
