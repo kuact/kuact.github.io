@@ -11,15 +11,6 @@
     
     
     <item>
-      <title>Hongkong</title>
-      <link>https://www.kuact.com/categories/hongkong/</link>
-      <pubDate>Tue, 28 Feb 2006 13:50:20 +0000</pubDate>
-      
-      <guid>https://www.kuact.com/categories/hongkong/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Life</title>
       <link>https://www.kuact.com/categories/life/</link>
       <pubDate>Tue, 28 Feb 2006 14:04:52 +0000</pubDate>
@@ -29,11 +20,47 @@
     </item>
     
     <item>
-      <title>Singapore</title>
-      <link>https://www.kuact.com/categories/singapore/</link>
-      <pubDate>Wed, 08 Feb 2006 16:06:38 +0000</pubDate>
+      <title>委内瑞拉</title>
+      <link>https://www.kuact.com/categories/%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89/</link>
+      <pubDate>Mon, 14 May 2007 04:32:45 +0000</pubDate>
       
-      <guid>https://www.kuact.com/categories/singapore/</guid>
+      <guid>https://www.kuact.com/categories/%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>斯里兰卡</title>
+      <link>https://www.kuact.com/categories/%E6%96%AF%E9%87%8C%E5%85%B0%E5%8D%A1/</link>
+      <pubDate>Sun, 15 Apr 2007 13:42:35 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/categories/%E6%96%AF%E9%87%8C%E5%85%B0%E5%8D%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>新加坡</title>
+      <link>https://www.kuact.com/categories/%E6%96%B0%E5%8A%A0%E5%9D%A1/</link>
+      <pubDate>Sun, 08 Jan 2006 16:06:38 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/categories/%E6%96%B0%E5%8A%A0%E5%9D%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>深圳</title>
+      <link>https://www.kuact.com/categories/%E6%B7%B1%E5%9C%B3/</link>
+      <pubDate>Sat, 11 Mar 2006 15:19:25 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/categories/%E6%B7%B1%E5%9C%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>香港</title>
+      <link>https://www.kuact.com/categories/%E9%A6%99%E6%B8%AF/</link>
+      <pubDate>Fri, 10 Mar 2006 16:05:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/categories/%E9%A6%99%E6%B8%AF/</guid>
       <description></description>
     </item>
     
