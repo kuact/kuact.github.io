@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>生活不在别处</title>
-    <link>https://www.kuact.com/</link>
-    <description>Recent content on 生活不在别处</description>
+    <title>Posts on 生活不在别处</title>
+    <link>https://www.kuact.com/post/</link>
+    <description>Recent content in Posts on 生活不在别处</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Jan 2006 21:38:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 20:17:15 +0000</lastBuildDate>
     
-	<atom:link href="https://www.kuact.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.kuact.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://www.kuact.com/about/</link>
-      <pubDate>Sun, 01 Jan 2006 21:38:52 +0800</pubDate>
-      
-      <guid>https://www.kuact.com/about/</guid>
-      <description>&amp;lt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;微信号:kuactt 过去再美好，也只是回忆；未来再艰难，也要自</description>
-    </item>
-    
-    <item>
-      <title>飘过云南的日子 - 香格里拉看花，看海，看世界</title>
-      <link>https://www.kuact.com/post/2020-08-03-%E9%A3%98%E8%BF%87%E4%BA%91%E5%8D%97%E7%9A%84%E6%97%A5%E5%AD%90---%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E7%9C%8B%E8%8A%B1/</link>
-      <pubDate>Fri, 03 Aug 2018 20:17:15 +0000</pubDate>
-      
-      <guid>https://www.kuact.com/post/2020-08-03-%E9%A3%98%E8%BF%87%E4%BA%91%E5%8D%97%E7%9A%84%E6%97%A5%E5%AD%90---%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E7%9C%8B%E8%8A%B1/</guid>
-      <description>时间：6月初夏 行程：昆明&amp;ndash;&amp;gt;大理&amp;ndash;&amp;gt;丽江束河&amp;ndash;&amp;gt;香格里拉&amp;ndash;&amp;gt;大理&amp;n</description>
-    </item>
     
     <item>
       <title>几近成名 – Wordpress博客搬家Hugo&#43;Github Page</title>
