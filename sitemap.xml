@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://www.kuact.com/post/2019-01-08---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E5%8A%9E%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E7%AD%BE%E8%AF%812019%E7%89%88/</loc>
+    <lastmod>2019-01-08T09:17:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.kuact.com/post/2019-01-05---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---ee-%E7%9A%84%E9%92%88%E9%94%8B%E7%9B%B8%E5%AF%B9/</loc>
     <lastmod>2019-01-05T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2362,7 +2369,7 @@
   
   <url>
     <loc>https://www.kuact.com/post/</loc>
-    <lastmod>2019-01-05T09:17:16+00:00</lastmod>
+    <lastmod>2019-01-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2523,7 +2530,7 @@
   
   <url>
     <loc>https://www.kuact.com/categories/%E6%97%85%E8%A1%8C%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/</loc>
-    <lastmod>2018-11-24T09:17:16+00:00</lastmod>
+    <lastmod>2019-01-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2594,6 +2601,13 @@
   <url>
     <loc>https://www.kuact.com/categories/%E6%B7%B1%E5%9C%B3/</loc>
     <lastmod>2006-03-11T15:19:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.kuact.com/tags/%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A/</loc>
+    <lastmod>2019-01-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
