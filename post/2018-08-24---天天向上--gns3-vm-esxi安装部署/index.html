@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="kuact" />
-  <meta name="description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： * Dynamips: CISCO IO" />
+  <meta name="description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： Dynamips: CISCO IOS" />
 
   <meta name="keywords" content="" />
 
@@ -50,7 +50,7 @@
 
 
 <meta property="og:title" content="天天向上 – GNS3 VM Esxi安装部署" />
-<meta property="og:description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： * Dynamips: CISCO IO" />
+<meta property="og:description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： Dynamips: CISCO IOS" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.kuact.com/post/2018-08-24---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A--gns3-vm-esxi%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" />
 
@@ -71,19 +71,19 @@
 
 
 <meta itemprop="name" content="天天向上 – GNS3 VM Esxi安装部署">
-<meta itemprop="description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： * Dynamips: CISCO IO">
+<meta itemprop="description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： Dynamips: CISCO IOS">
 
 
 <meta itemprop="datePublished" content="2018-08-24T09:17:15&#43;00:00" />
 <meta itemprop="dateModified" content="2018-08-24T09:17:15&#43;00:00" />
-<meta itemprop="wordCount" content="1679">
+<meta itemprop="wordCount" content="1669">
 
 
 
 <meta itemprop="keywords" content="天天向上," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="天天向上 – GNS3 VM Esxi安装部署"/>
-<meta name="twitter:description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： * Dynamips: CISCO IO"/>
+<meta name="twitter:description" content="最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： Dynamips: CISCO IOS"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -192,19 +192,29 @@
 <p><font face="微软雅黑">
 最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。</p>
 
-<p>GNS3就是这样的网络可视化模拟器，其主要支持：
-* Dynamips: CISCO IOS交换机和路由器（原装CISCO IOS BIN文件）
-* Qemu：CISCO ASA 防火墙， CISCO NX OS; （虚拟机qcow2 文件）
-* IOU：CISCO IOS on UNIX （虚拟机IOS BIN文件）</p>
+<p>GNS3就是这样的网络可视化模拟器，其主要支持：</p>
+
+<ul>
+<li><p>Dynamips: CISCO IOS交换机和路由器（原装CISCO IOS BIN文件）</p></li>
+
+<li><p>Qemu：CISCO ASA 防火墙， CISCO NX OS; （虚拟机qcow2 文件）</p></li>
+
+<li><p>IOU：CISCO IOS on UNIX （虚拟机IOS BIN文件）</p></li>
+</ul>
 
 <h2 id="gns3构架">GNS3构架</h2>
 
 <p>GNS3采用服务器/客户端构架，你可以选择安装all-in-one版本（windows）把服务器与客户端都部署在本机上（local server）。你也可以单独下载GNS3虚拟机（VM）版本，部署在远端虚拟服务器上（remote server）。</p>
 
-<p>这话听着好饶口有没有，我起初部署的时候也是乱的一塌糊涂，无端端浪费了许多脑细胞。简单来说GNS3 VM有几个版本：
-* VIRTUALBOX（Oracle 的免费虚拟机）
-* VMWARE WORKSTATION (VMWARE的免费虚拟机-Windows版本)
-* VMWARE ESXI (VMWARE的免费虚拟机-服务器版本)</p>
+<p>这话听着好饶口有没有，我起初部署的时候也是乱的一塌糊涂，无端端浪费了许多脑细胞。简单来说GNS3 VM有几个版本：</p>
+
+<ul>
+<li><p>VIRTUALBOX（Oracle 的免费虚拟机）</p></li>
+
+<li><p>VMWARE WORKSTATION (VMWARE的免费虚拟机-Windows版本)</p></li>
+
+<li><p>VMWARE ESXI (VMWARE的免费虚拟机-服务器版本)</p></li>
+</ul>
 
 <p>在你的电脑本机上可以安装VIRTUAL BOX和VMWARE Workstation；建议最少8GB内存。这里主要介绍VMWARE ESXI 部署到远端服务器上。</p>
 
@@ -240,11 +250,17 @@
 
 <p>CISCO的防火墙是个超级顽固的家伙，传统的ASA部署方式不靠谱，不要问我为什么。所以CISCO推出了ASAv （Adaptive Security Virtual Appliance），支持主流防火墙ASA 5512-x, 5515-x, 5525-x, 5545-x, 5555-x, 5585-x。</p>
 
-<p>应用部署前提条件：
-* 开启Nested VM （KVM）
-* RAM: 2048 MB
-* Network Adapter:8
-* Console type: vnc</p>
+<p>应用部署前提条件：</p>
+
+<ul>
+<li><p>开启Nested VM （KVM）</p></li>
+
+<li><p>RAM: 2048 MB</p></li>
+
+<li><p>Network Adapter:8</p></li>
+
+<li><p>Console type: vnc</p></li>
+</ul>
 
 <p>简单一点，就是直接在应用中加载.gns3a文件进行自动应用部署设置all devices &ndash;&gt;New appliance template
 <a href="https://docs.gns3.com/1_3RdgLWgfk4ylRr99htYZrGMoFlJcmKAAaUAc8x9Ph8/index.html">打怪指南</a></p>
