@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://www.kuact.com/post/2020-01-10---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E6%9A%B9%E7%B2%92siem-reap%E5%90%B4%E5%93%A5%E7%AA%9Fangkor-wat%E7%9A%84%E6%97%A5%E5%87%BA%E6%97%A5%E8%90%BD/</loc>
+    <lastmod>2020-01-10T09:17:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.kuact.com/post/2019-12-09---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E6%B0%91%E4%B8%B9%E5%B2%9Bbintan-resorts/</loc>
     <lastmod>2019-12-09T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2432,7 +2439,7 @@
   
   <url>
     <loc>https://www.kuact.com/post/</loc>
-    <lastmod>2019-12-09T09:17:16+00:00</lastmod>
+    <lastmod>2020-01-10T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2579,14 +2586,14 @@
   
   <url>
     <loc>https://www.kuact.com/tags/%E6%96%B0%E5%8A%A0%E5%9D%A1/</loc>
-    <lastmod>2019-12-09T09:17:16+00:00</lastmod>
+    <lastmod>2020-01-10T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.kuact.com/categories/%E6%96%B0%E5%8A%A0%E5%9D%A1/</loc>
-    <lastmod>2019-12-09T09:17:16+00:00</lastmod>
+    <lastmod>2020-01-10T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2608,6 +2615,13 @@
   <url>
     <loc>https://www.kuact.com/categories/%E6%97%A5%E6%9C%AC/</loc>
     <lastmod>2012-05-20T08:08:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.kuact.com/tags/%E6%9F%AC%E5%9F%94%E5%AF%A8/</loc>
+    <lastmod>2020-01-10T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
