@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</loc>
+    <lastmod>2020-05-08T09:17:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.kuact.com/post/2020-04-22---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---circuit-breaker/</loc>
     <lastmod>2020-04-22T19:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -40,13 +47,6 @@
   <url>
     <loc>https://www.kuact.com/post/2019-05-22---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---ee-%E8%87%AA%E8%A1%8C%E8%BD%A6%E6%9D%A5%E4%BA%86/</loc>
     <lastmod>2019-05-22T09:17:16+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</loc>
-    <lastmod>2019-05-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2453,7 +2453,7 @@
   
   <url>
     <loc>https://www.kuact.com/post/</loc>
-    <lastmod>2020-04-22T19:17:16+00:00</lastmod>
+    <lastmod>2020-05-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2509,14 +2509,14 @@
   
   <url>
     <loc>https://www.kuact.com/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/</loc>
-    <lastmod>2019-05-08T09:17:16+00:00</lastmod>
+    <lastmod>2020-05-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.kuact.com/categories/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/</loc>
-    <lastmod>2019-05-08T09:17:16+00:00</lastmod>
+    <lastmod>2020-05-08T09:17:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

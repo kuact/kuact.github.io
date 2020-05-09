@@ -6,7 +6,7 @@
     <description>Recent content in 天天向上 on 生活不在别处</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 May 2019 09:17:16 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 09:17:16 +0000</lastBuildDate>
     
 	<atom:link href="https://www.kuact.com/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>天天向上 - NAS三部曲1：Snapraid</title>
       <link>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</link>
-      <pubDate>Wed, 08 May 2019 09:17:16 +0000</pubDate>
+      <pubDate>Fri, 08 May 2020 09:17:16 +0000</pubDate>
       
       <guid>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</guid>
       <description>最近在折腾NAS，家里的那块Mycloud看着要挂，做一个自检，整个SMART都没反应了。毕竟mycloud是Debian深度定制版，我也不</description>
