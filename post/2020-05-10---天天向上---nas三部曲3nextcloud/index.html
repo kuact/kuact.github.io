@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-10T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-10T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1035">
+<meta itemprop="wordCount" content="1005">
 
 
 
@@ -330,11 +330,15 @@ docker exec -it nextclouddb bash
 <p>mysql -uroot -p
 //login SQL root password</p>
 
-<p>CREATE USER &lsquo;&lt;新建一个nextcloud数据库instance，这里设置用户名sup&gt;&rsquo;  IDENTIFIED BY &lsquo;&lt;这里用户sup的密码，注意引号&gt;&rsquo;
-CREATE DATABASE IF NOT EXISTS &lt;新建数据库实例 nextcloud&gt;
-GRANT ALL PRIVILEGES ON nextcloud.* TO &lsquo;sup&rsquo; IDENTIFIED BY &lsquo;<sup 密码>&lsquo;
-quit
-exit</p>
+<p><strong><em>CREATE USER &lsquo;&lt;新建用户sup&gt;&rsquo;  IDENTIFIED BY &lsquo;&lt;用户sup的密码，注意引号&gt;&rsquo;</em></strong></p>
+
+<p><strong><em>CREATE DATABASE IF NOT EXISTS &lt;新建数据库实例 nextcloud&gt;</em></strong></p>
+
+<p>*<strong>GRANT ALL PRIVILEGES ON nextcloud.* TO &lsquo;sup&rsquo; IDENTIFIED BY &lsquo;<sup 密码>&lsquo;</strong>*</p>
+
+<p><strong><em>quit</em></strong></p>
+
+<p>exit</p>
 
 <h2 id="tips">Tips</h2>
 
