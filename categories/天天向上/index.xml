@@ -30,20 +30,20 @@
     </item>
     
     <item>
+      <title>天天向上 - NAS三部曲3：NextCloud</title>
+      <link>https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/</link>
+      <pubDate>Sun, 10 May 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/</guid>
+      <description>OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记</description>
+    </item>
+    
+    <item>
       <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV）</title>
       <link>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</link>
       <pubDate>Sat, 09 May 2020 09:17:16 +0000</pubDate>
       
       <guid>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</guid>
-      <description>题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是</description>
-    </item>
-    
-    <item>
-      <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV）</title>
-      <link>https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/</link>
-      <pubDate>Sat, 09 May 2020 09:17:16 +0000</pubDate>
-      
-      <guid>https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/</guid>
       <description>题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是</description>
     </item>
     

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV） - 生活不在别处</title>
+  <title>天天向上 - NAS三部曲3：NextCloud - 生活不在别处</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="kuact" />
-  <meta name="description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是" />
+  <meta name="description" content="OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记" />
 
   <meta name="keywords" content="" />
 
@@ -49,18 +49,16 @@
 
 
 
-<meta property="og:title" content="天天向上 - NAS三部曲2：OpenMediaVault（OMV）" />
-<meta property="og:description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是" />
+<meta property="og:title" content="天天向上 - NAS三部曲3：NextCloud" />
+<meta property="og:description" content="OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/" />
 
 
 
-<meta property="article:published_time" content="2020-05-09T09:17:16&#43;00:00"/>
+<meta property="article:published_time" content="2020-05-10T09:17:16&#43;00:00"/>
 
-<meta property="article:modified_time" content="2020-05-09T09:17:16&#43;00:00"/>
-
-
+<meta property="article:modified_time" content="2020-05-10T09:17:16&#43;00:00"/>
 
 
 
@@ -70,20 +68,22 @@
 
 
 
-<meta itemprop="name" content="天天向上 - NAS三部曲2：OpenMediaVault（OMV）">
-<meta itemprop="description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是">
 
 
-<meta itemprop="datePublished" content="2020-05-09T09:17:16&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-09T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1590">
+<meta itemprop="name" content="天天向上 - NAS三部曲3：NextCloud">
+<meta itemprop="description" content="OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记">
+
+
+<meta itemprop="datePublished" content="2020-05-10T09:17:16&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-10T09:17:16&#43;00:00" />
+<meta itemprop="wordCount" content="1036">
 
 
 
 <meta itemprop="keywords" content="天天向上," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="天天向上 - NAS三部曲2：OpenMediaVault（OMV）"/>
-<meta name="twitter:description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是"/>
+<meta name="twitter:title" content="天天向上 - NAS三部曲3：NextCloud"/>
+<meta name="twitter:description" content="OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -146,10 +146,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">天天向上 - NAS三部曲2：OpenMediaVault（OMV）</h1>
+      <h1 class="post-title">天天向上 - NAS三部曲3：NextCloud</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-05-09 </span>
+        <span class="post-time"> 2020-05-10 </span>
         <div class="post-category">
             
               <a href="/categories/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/"> 天天向上 </a>
@@ -170,20 +170,18 @@
 <ul>
 <li>
 <ul>
-<li><a href="#题记">题记</a></li>
-<li><a href="#omv安装部署">OMV安装部署</a>
+<li><a href="#docker">Docker</a>
 <ul>
-<li><a href="#硬盘-disks">硬盘 (Disks)</a></li>
-<li><a href="#文件系统-file-systems">文件系统 (File Systems)</a></li>
-<li><a href="#共享文件夹-shared-folders">共享文件夹 (Shared Folders)</a></li>
+<li><a href="#常用容器命令">常用容器命令</a></li>
+<li><a href="#docker-网络">Docker 网络</a></li>
 </ul></li>
-<li><a href="#omv扩展插件">OMV扩展插件</a></li>
-<li><a href="#snapraid-硬盘恢复">SnapRAID 硬盘恢复</a>
+<li><a href="#nextcloud-container">NextCloud Container</a></li>
+<li><a href="#maridb-container">MariDB Container</a>
 <ul>
-<li><a href="#snapraid配置文件">SnapRAID配置文件</a></li>
-<li><a href="#硬盘恢复流程">硬盘恢复流程</a></li>
+<li><a href="#创建名为nextclouddb的maridb-container">创建名为nextclouddb的MariDB Container</a></li>
+<li><a href="#绑定nextcloud服务器地址">绑定nextcloud服务器地址</a></li>
+<li><a href="#新建数据库用户与实例">新建数据库用户与实例</a></li>
 </ul></li>
-<li><a href="#彩蛋">彩蛋</a></li>
 <li><a href="#tips">Tips</a></li>
 <li><a href="#我是快乐的分隔线">我是快乐的分隔线</a></li>
 </ul></li>
@@ -201,152 +199,154 @@
 
 <p><font face="微软雅黑"></p>
 
-<h2 id="题记">题记</h2>
+<p>OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记说我的Linux就是个菜了。</p>
 
-<p>上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。</p>
+<h2 id="docker">Docker</h2>
 
-<p>其实OMV也是跑Debian的，要NFS，直接apt-get一个NFS server不香么？嗯嗯，不懂咧，真的是老了，喜欢user friendly的GUI。</p>
+<p>容器的作用主要就是微服务，快速开发，快速部署，而不需要管理硬件底层的内容。容器比VMWare这些虚拟化产品更轻量化。</p>
 
-<p>另外我对Linux就是个菜呀，想起以前领导让去我单枪匹马去项目开局，我立马表示很迷茫。领导一句话顿时开窍：不懂没关系，电话会打吧；去吧，我看好你哦&hellip;.</p>
+<h3 id="常用容器命令">常用容器命令</h3>
 
-<p>现在回想起来，心里面一百个草泥马的飘过；但真的是锻炼人，辛苦但成长飞快。有些人用工作一年学到的东西浑浑噩噩的混了十年。</p>
+<p>docker ps
+//检查运行容器状态</p>
 
-<p>有些人一直没有松懈过自己，每天进步多一点。做leader还是做油条，人生都是自己选的。</p>
+<p>docker network ls
+docker network inspect <network name>
+//To check the container assigned IP on the specified network
+docker network connect</p>
 
-<p>哦哦，现在不用打电话了，Google总会了吧。</p>
+<p>docker ps
+docker containner list
+docker container stop <name> / <container id>
+docker restart</p>
 
-<h2 id="omv安装部署">OMV安装部署</h2>
+<p>docker container logs &ndash;tail 100 <name></p>
 
-<p>前面说了，OMV部署在Debian上，所以你首先得有一个Debian Linux。不过人家已经ISO打包好给你了；剩下的安装，网上一堆堆教程，请参见:</p>
+<p>docker container rm -f $
+//delete all running and stopped containers</p>
 
-<ul>
-<li><a href="https://www.tecmint.com/install-openmdediavault-nas-storage/">打怪指南1</a></li>
-<li><a href="https://linuxhint.com/install_openmediavault_nas/">打怪指南2</a></li>
-</ul>
+<p>docker version
+docker update</p>
 
-<p>最近OMV5已经开始稳定了（搭载Debian 10），尝鲜可以试试；稳定就用OMV4（搭载Debian 9），GUI界面上差距并不明显。</p>
+<p>docker exec -it <container name> bash
+//Enter a running container shell</p>
 
-<p>OK，我们来重点解释一下OMV的文件结构：</p>
+<h3 id="docker-网络">Docker 网络</h3>
 
-<h3 id="硬盘-disks">硬盘 (Disks)</h3>
-
-<p>/dev/sda 第一块建议用SSD（virtual disk）用来装系统，不大20G就够了
-/dev/sdb 依次排开，做数据盘</p>
-
-<h3 id="文件系统-file-systems">文件系统 (File Systems)</h3>
-
-<p>硬盘加载完了就是格式化文件系统（ext4），一般都一个硬盘一个分区，比如/dev/sda1。</p>
-
-<p>问题来了，文件系统到底干啥吃的？<a href="https://www.kuact.com/post/2020-06-18---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---windowns-10%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8ghost%E4%B9%88/">自家打怪指南</a></p>
-
-<p>格式化完了，得挂载(Mount)。GUI的好处来了，这些操作都是通过界面完成的，敲命令行干啥。</p>
-
-<h3 id="共享文件夹-shared-folders">共享文件夹 (Shared Folders)</h3>
-
-<p>重点来了，最终用户接触到的，实际上是OMV的共享文件夹。</p>
-
-<p>root@NAS:/sharedfolders#</p>
-
-<p>这下关系明了了：共享文件夹&ndash;&gt;文件系统&ndash;&gt;硬盘存储区块。</p>
-
-<p>共享文件夹专供目录：</p>
+<p>Docker有五种类型网络</p>
 
 <ul>
-<li>FTP （OMV自带）</li>
-<li>SMB/CIFS (OMV自带）</li>
-<li>Docker 的各种应用（OMV插件）</li>
-<li>NFS （OMV自带）</li>
+<li>brdige：类似NAT 内网映射</li>
+<li>host：用host的ip，映射在不同的端口上</li>
+<li>overlay</li>
+<li>macvlan：虚拟mac给container</li>
+<li>none</li>
 </ul>
 
-<h2 id="omv扩展插件">OMV扩展插件</h2>
-
-<p>OMV强大之处就是可以装插件开挂，配上Docker插件（NAS三部曲3），简直疯的没边了。</p>
-
-<p>列几个好玩的</p>
+<p>我们最关心的是macvlan，因为大部分网络都用layer 2进行域隔离。所以我们需要用到docker host的sub-interface作为macvlan的载体。</p>
 
 <ul>
-<li>SnapRAID</li>
-<li>MergerFS (在多个硬盘上自动进行共享文件空间分配)</li>
-<li>Docker (666玩起来)</li>
-<li>Transmission （Docker)</li>
-<li>Nextcloud （Docker)</li>
-<li>MariDB （Docker)</li>
-<li>PLEX （Docker)</li>
-<li>Radarr (Docker)</li>
-<li>qbittorrent (Docker)</li>
-<li>jackett (Docker)</li>
+<li>通过OMV网络界面创建vlan sub-interface</li>
+<li>交换对应端口要改成trunk port</li>
+<li>通过OMV docker界面创建macvlan 网络，指定parent interface 为vlan sub-interface</li>
 </ul>
 
-<h2 id="snapraid-硬盘恢复">SnapRAID 硬盘恢复</h2>
+<p>命令行方式</p>
 
-<p>安装使用篇参见：<a href="https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">点我穿越门</a></p>
+<p>ip addr | grep mtu
+docker network create -d macvlan
+    &ndash;subnet=<10.0.10.0/24> &ndash;gateway=<10.0.10.1>
+    -o parent=<eth0.10>
+    <macvlan10></p>
 
-<ul>
-<li>SnapRAID的索引文件叫：snapraid.content</li>
-<li>SnapRAID的校验文件叫：snapraid.parity</li>
-</ul>
+<p>//Docker macvlan driver automagically creates host sub interfaces when you create a new macvlan network with sub interface as a parent.</p>
 
-<h3 id="snapraid配置文件">SnapRAID配置文件</h3>
+<p>docker network ls</p>
 
-<p>SnapRAID的配置文件存储在：/etc/snapraid.conf</p>
+<p>docker network connect <br />
+  &ndash;ip=<10.0.20.3> <br />
+  <macvlan20> <br />
+  <container1></p>
 
-<hr />
+<p>docker exec -ti container1 ip addr | grep &lsquo;mtu|inet&rsquo;
+//check container 1 IP address</p>
 
-<p>content /srv/dev-disk-by-label-nas/snapraid.content
-parity /srv/dev-disk-by-label-nas/snapraid.parity</p>
+<h2 id="nextcloud-container">NextCloud Container</h2>
 
-<p>content /srv/dev-disk-by-label-d1/snapraid.content
-disk d1 /srv/dev-disk-by-label-d1</p>
+<p>NextCloud就是本地版的dropbox，构建私有云必备。</p>
 
-<hr />
+<p>docker create <br />
+  &ndash;name=nextcloud <br />
+  &ndash;net=<macvlan> <br />
+  &ndash;ip=<ip address> <br />
+  -e PUID=1000 <br />
+  -e PGID=100 <br />
+  -e TZ=Europe/London <br />
+  -p 443:443 <br />
+  -v /sharedfolders/AppData/NextCloud:/config <br />
+  -v /sharedfolders/NextCloud:/data <br />
+  &ndash;restart unless-stopped <br />
+  linuxserver/nextcloud</p>
 
-<p>配置文件的作用就是告诉SnapRAID那个是索引文件，那个是数据盘，那个是校验文件。</p>
+<p>网络选择macvlan，默认端口443</p>
 
-<ul>
-<li>至少一个数据文件(disk)</li>
-<li>至少两个索引文件(content)</li>
-<li>至少一个校验文件(parity)</li>
-</ul>
+<h2 id="maridb-container">MariDB Container</h2>
 
-<p>又来黄婆卖瓜了，用OMV的好处就是上面这些配置都是图形化的，费什么劲呀。</p>
+<h3 id="创建名为nextclouddb的maridb-container">创建名为nextclouddb的MariDB Container</h3>
 
-<h3 id="硬盘恢复流程">硬盘恢复流程</h3>
+<p>docker create <br />
+  &ndash;name=nextclouddb <br />
+  -e PUID=1000 <br />
+  -e PGID=100 <br />
+  -e MYSQL_ROOT_PASSWORD=&lt;数据库Root密码&gt; <br />
+  -e TZ=Asia/Singapore <br />
+  -p 3306:3306 <br />
+  -v /sharedfolders/AppData/NextCloudDB:/config <br />
+  &ndash;restart always <br />
+  linuxserver/mariadb</p>
 
-<ul>
-<li>上新硬盘，加载硬盘，格式化文件系统</li>
-<li>在SnapRAID的插件界面，在drive页面指定当前数据盘文件系统到新硬盘的文件系统</li>
-<li>命令行：snapraid -d <snapraid 数据盘名字> -l fix.log fix 进行新硬盘文件恢复</li>
-<li>命令行：snapraid -d <snapraid 数据盘名字> -a check 进行新硬盘数据校验</li>
-</ul>
+<p>网络选择Macvlan，默认端口3306</p>
 
-<p>如果你要检查日志，日志存放在用户根目录，比如/root/fix.log</p>
+<p>数据库数据存储再OMV /sharedfolders/AppData/NextCloudDB目录上。</p>
 
-<p>#cd
-#pwd
-#ls -l</p>
+<h3 id="绑定nextcloud服务器地址">绑定nextcloud服务器地址</h3>
 
-<p>恢复之后，文件属性都是root，所以你要在OMV的Shared Folder页面ACL上修改共享文件的用户属性。</p>
+<p>cd /shareedfolder/AppData/Nextclouddb
+nano custom.cnf</p>
 
-<p>旧硬盘如果挂了，你可以直接删除；如果没挂，你可以在Shared Folder页面指定新硬盘。然后你就可以unmout文件系统，并删除了。</p>
+<p>bind-address=<NextCloud IP></p>
 
-<h2 id="彩蛋">彩蛋</h2>
+<p>绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库。</p>
 
-<p>你要是喜欢折腾，抛几个NAS方案自己去比较一下？</p>
+<h3 id="新建数据库用户与实例">新建数据库用户与实例</h3>
 
-<ul>
-<li>FreeNAS</li>
-<li>NAS4Free</li>
-<li>unRIAD</li>
-</ul>
+<p>cd
+clear</p>
 
-<p>别问我为什呢，上面几个一个都没有用过。</p>
+<p>docker restart nextclouddb
+docker exec -it nextclouddb bash
+//bash into nextclouddb container</p>
+
+<p>mysql -uroot -p
+//login SQL root password</p>
+
+<p>CREATE USER &lsquo;&lt;新建一个nextcloud数据库instance，这里设置用户名sup&gt;&rsquo;  IDENTIFIED BY &lsquo;&lt;这里用户sup的密码，注意引号&gt;&lsquo;;
+CREATE DATABASE IF NOT EXISTS &lt;新建数据库实例 nextcloud&gt;;
+GRANT ALL PRIVILEGES ON nextcloud.* TO &lsquo;sup&rsquo; IDENTIFIED BY &lsquo;<sup 密码>&rsquo;;
+quit
+exit</p>
 
 <h2 id="tips">Tips</h2>
 
 <ol>
-<li>OMV官网 <a href="https://www.openmediavault.org/">点我穿越门</a></li>
-<li>OMV外挂插件手动加载 <a href="https://forum.openmediavault.org/index.php?thread/5549-omv-extras-org-plugin/">点我穿越门</a></li>
-<li>OMV外挂插件命令行 <a href="https://www.omv-extras.org//">点我穿越门</a></li>
+<li>Nextcloud Docker <a href="https://hub.docker.com/r/linuxserver/nextcloud">点我穿越门</a></li>
+<li>MariDB Docker <a href="https://hub.docker.com/r/linuxserver/mariadb/">点我穿越门</a></li>
+<li>Transmission Docker <a href="https://hub.docker.com/r/linuxserver/transmission">点我穿越门</a></li>
+<li>Jackett Docker <a href="https://hub.docker.com/r/linuxserver/jackett">点我穿越门</a></li>
+<li>Nextcloud 安装视频 <a href="https://www.youtube.com/watch?v=PKsq7k2pwsI&amp;feature=emb_rel_pause">点我穿越门</a></li>
+<li>Docker Cheatsheet <a href="https://github.com/wsargent/docker-cheat-sheet">点我穿越门</a></li>
+<li>Docker 网络 <a href="https://docs.docker.com/network/">点我穿越门</a></li>
+<li>Docker macvlan 配置 <a href="https://hicu.be/docker-networking-macvlan-vlan-configuration">点我穿越门</a></li>
 </ol>
 
 <hr />
@@ -377,14 +377,14 @@ disk d1 /srv/dev-disk-by-label-d1</p>
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/">
+          <a class="prev" href="/post/2020-06-18---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---windowns-10%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8ghost%E4%B9%88/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">天天向上 - NAS三部曲2：OpenMediaVault（OMV）</span>
+            <span class="prev-text nav-default">天天向上 - WINDOWNS 10操作系统备份与还原，你还在用Ghost么</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">
-            <span class="next-text nav-default">天天向上 - NAS三部曲1：Snapraid</span>
+          <a class="next" href="/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/">
+            <span class="next-text nav-default">天天向上 - NAS三部曲2：OpenMediaVault（OMV）</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
