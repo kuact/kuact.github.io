@@ -56,9 +56,9 @@
 
 
 
-<meta property="article:published_time" content="2019-05-09T09:17:16&#43;00:00"/>
+<meta property="article:published_time" content="2020-05-09T09:17:16&#43;00:00"/>
 
-<meta property="article:modified_time" content="2019-05-09T09:17:16&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-09T09:17:16&#43;00:00"/>
 
 
 
@@ -74,9 +74,9 @@
 <meta itemprop="description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是">
 
 
-<meta itemprop="datePublished" content="2019-05-09T09:17:16&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-09T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1556">
+<meta itemprop="datePublished" content="2020-05-09T09:17:16&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-09T09:17:16&#43;00:00" />
+<meta itemprop="wordCount" content="1590">
 
 
 
@@ -149,7 +149,7 @@
       <h1 class="post-title">天天向上 - NAS三部曲2：OpenMediaVault（OMV）</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-05-09 </span>
+        <span class="post-time"> 2020-05-09 </span>
         <div class="post-category">
             
               <a href="/categories/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/"> 天天向上 </a>
@@ -181,13 +181,6 @@
 <li><a href="#snapraid-硬盘恢复">SnapRAID 硬盘恢复</a>
 <ul>
 <li><a href="#snapraid配置文件">SnapRAID配置文件</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#omv-name-d3-parity-drive-label-nasbak2">OMV-Name: d3-parity  Drive Label: nasbak2</a></li>
-<li><a href="#omv-name-d1-drive-label-d2">OMV-Name: d1  Drive Label: d2</a>
-<ul>
-<li>
-<ul>
 <li><a href="#硬盘恢复流程">硬盘恢复流程</a></li>
 </ul></li>
 <li><a href="#彩蛋">彩蛋</a></li>
@@ -288,27 +281,32 @@
 
 <p>安装使用篇参见：<a href="https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">点我穿越门</a></p>
 
-<p>SnapRAID的索引文件叫：snapraid.content；SnapRAID的校验文件叫：snapraid.parity</p>
+<ul>
+<li>SnapRAID的索引文件叫：snapraid.content</li>
+<li>SnapRAID的校验文件叫：snapraid.parity</li>
+</ul>
 
 <h3 id="snapraid配置文件">SnapRAID配置文件</h3>
 
 <p>SnapRAID的配置文件存储在：/etc/snapraid.conf</p>
 
-<p>#####################################################################</p>
+<hr />
 
-<h1 id="omv-name-d3-parity-drive-label-nasbak2">OMV-Name: d3-parity  Drive Label: nasbak2</h1>
+<p>content /srv/dev-disk-by-label-nas/snapraid.content
+parity /srv/dev-disk-by-label-nas/snapraid.parity</p>
 
-<p>content /srv/dev-disk-by-label-nasbak2/snapraid.content
-parity /srv/dev-disk-by-label-nasbak2/snapraid.parity</p>
+<p>content /srv/dev-disk-by-label-d1/snapraid.content
+disk d1 /srv/dev-disk-by-label-d1</p>
 
-<p>#####################################################################</p>
-
-<h1 id="omv-name-d1-drive-label-d2">OMV-Name: d1  Drive Label: d2</h1>
-
-<p>content /srv/dev-disk-by-label-d2/snapraid.content
-disk d1 /srv/dev-disk-by-label-d2</p>
+<hr />
 
 <p>配置文件的作用就是告诉SnapRAID那个是索引文件，那个是数据盘，那个是校验文件。</p>
+
+<ul>
+<li>至少一个数据文件(disk)</li>
+<li>至少两个索引文件(content)</li>
+<li>至少一个校验文件(parity)</li>
+</ul>
 
 <p>又来黄婆卖瓜了，用OMV的好处就是上面这些配置都是图形化的，费什么劲呀。</p>
 
@@ -379,14 +377,14 @@ disk d1 /srv/dev-disk-by-label-d2</p>
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2019-05-22---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---ee-%E8%87%AA%E8%A1%8C%E8%BD%A6%E6%9D%A5%E4%BA%86/">
+          <a class="prev" href="/post/2020-06-18---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---windowns-10%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8ghost%E4%B9%88/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">飘过新加坡的日子 - E&amp;E 自行车来了</span>
+            <span class="prev-text nav-default">天天向上 - WINDOWNS 10操作系统备份与还原，你还在用Ghost么</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/post/2019-04-07---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E6%9C%80%E5%A5%BD%E5%90%83%E7%9A%84%E8%9E%83%E8%9F%B9%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80/">
-            <span class="next-text nav-default">飘过新加坡的日子 - 最好吃的螃蟹，没有之一(龙海鲜螃蟹王：Mellben Seafood)</span>
+          <a class="next" href="/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">
+            <span class="next-text nav-default">天天向上 - NAS三部曲1：Snapraid</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
