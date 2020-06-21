@@ -6,10 +6,19 @@
     <description>Recent content in 天天向上 on 生活不在别处</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 May 2020 09:17:16 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 09:17:16 +0000</lastBuildDate>
     
 	<atom:link href="https://www.kuact.com/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>天天向上 - Ruckus 无线WIFI AP的网络优化</title>
+      <link>https://www.kuact.com/post/2020-06-20---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---ruckus-%E6%97%A0%E7%BA%BFwifi-ap%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 20 Jun 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-06-20---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---ruckus-%E6%97%A0%E7%BA%BFwifi-ap%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</guid>
+      <description>不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房</description>
+    </item>
     
     <item>
       <title>天天向上 - NAS三部曲1：Snapraid</title>
