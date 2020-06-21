@@ -49,10 +49,10 @@
     
     <item>
       <title>天天向上 - NAS三部曲1：Snapraid</title>
-      <link>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid---copy/</link>
+      <link>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</link>
       <pubDate>Fri, 08 May 2020 09:17:16 +0000</pubDate>
       
-      <guid>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid---copy/</guid>
+      <guid>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</guid>
       <description>最近在折腾NAS，家里的那块Mycloud看着要挂，做一个自检，整个SMART都没反应了。毕竟mycloud是Debian深度定制版，我也不</description>
     </item>
     
@@ -99,6 +99,15 @@
       
       <guid>https://www.kuact.com/post/2019-05-22---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---ee-%E8%87%AA%E8%A1%8C%E8%BD%A6%E6%9D%A5%E4%BA%86/</guid>
       <description>Ethan五岁了，这放在国内已经是天文地理，钢琴跳舞，游泳画画完全开挂的年纪；而我家的Ethan却还在当快乐孩子王，每个周末不是琢磨去动物园</description>
+    </item>
+    
+    <item>
+      <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV）</title>
+      <link>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</link>
+      <pubDate>Thu, 09 May 2019 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</guid>
+      <description>题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是</description>
     </item>
     
     <item>

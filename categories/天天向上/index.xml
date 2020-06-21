@@ -31,11 +31,20 @@
     
     <item>
       <title>天天向上 - NAS三部曲1：Snapraid</title>
-      <link>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid---copy/</link>
+      <link>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</link>
       <pubDate>Fri, 08 May 2020 09:17:16 +0000</pubDate>
       
-      <guid>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid---copy/</guid>
+      <guid>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</guid>
       <description>最近在折腾NAS，家里的那块Mycloud看着要挂，做一个自检，整个SMART都没反应了。毕竟mycloud是Debian深度定制版，我也不</description>
+    </item>
+    
+    <item>
+      <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV）</title>
+      <link>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</link>
+      <pubDate>Thu, 09 May 2019 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</guid>
+      <description>题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是</description>
     </item>
     
     <item>
