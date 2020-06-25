@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-09T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-09T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1590">
+<meta itemprop="wordCount" content="1629">
 
 
 
@@ -315,15 +315,24 @@ disk d1 /srv/dev-disk-by-label-d1</p>
 <ul>
 <li>上新硬盘，加载硬盘，格式化文件系统</li>
 <li>在SnapRAID的插件界面，在drive页面指定当前数据盘文件系统到新硬盘的文件系统</li>
-<li>命令行：snapraid -d <snapraid 数据盘名字> -l fix.log fix 进行新硬盘文件恢复</li>
-<li>命令行：snapraid -d <snapraid 数据盘名字> -a check 进行新硬盘数据校验</li>
+<li>命令行：snapraid -d (snapraid 数据盘名字) -l fix.log fix 进行新硬盘文件恢复</li>
+<li>命令行：snapraid -d (snapraid 数据盘名字) -a check 进行新硬盘数据校验</li>
+</ul>
+
+<p>数据盘的名字就是上面配置文件的d1。</p>
+
+<ul>
+<li>#mount | grep /srv</li>
+<li>ls -lha /dev/disk/by-uuid</li>
 </ul>
 
 <p>如果你要检查日志，日志存放在用户根目录，比如/root/fix.log</p>
 
-<p>#cd
-#pwd
-#ls -l</p>
+<ul>
+<li>#cd</li>
+<li>#pwd</li>
+<li>#ls -l</li>
+</ul>
 
 <p>恢复之后，文件属性都是root，所以你要在OMV的Shared Folder页面ACL上修改共享文件的用户属性。</p>
 
