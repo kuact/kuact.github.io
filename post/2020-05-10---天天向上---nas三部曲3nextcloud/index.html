@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-10T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-10T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1005">
+<meta itemprop="wordCount" content="1300">
 
 
 
@@ -207,29 +207,35 @@
 
 <h3 id="常用容器命令">常用容器命令</h3>
 
-<p>docker ps
-//检查运行容器状态</p>
+<ul>
+<li>docker ps</li>
+</ul>
 
-<p>docker network ls
-docker network inspect <network name>
-//To check the container assigned IP on the specified network
-docker network connect</p>
+<p><strong><em>检查运行容器状态</em></strong>
+- docker network ls
+- docker network inspect (网络名字)</p>
 
-<p>docker ps
-docker containner list
-docker container stop <name> / <container id>
-docker restart</p>
+<p><strong><em>To check the container assigned IP on the specified network</em></strong></p>
 
-<p>docker container logs &ndash;tail 100 <name></p>
+<ul>
+<li>docker network connect</li>
+<li>docker ps</li>
+<li>docker containner list</li>
+<li>docker container stop (name&gt; / container id)</li>
+<li>docker restart</li>
+<li>docker container logs &ndash;tail 100 (name)</li>
+<li>docker container rm -f $</li>
+</ul>
 
-<p>docker container rm -f $
-//delete all running and stopped containers</p>
+<p><strong><em>delete all running and stopped containers</em></strong></p>
 
-<p>docker version
-docker update</p>
+<ul>
+<li>docker version</li>
+<li>docker update</li>
+<li>docker exec -it (container name) bash</li>
+</ul>
 
-<p>docker exec -it <container name> bash
-//Enter a running container shell</p>
+<p><strong><em>Enter a running container shell</em></strong></p>
 
 <h3 id="docker-网络">Docker 网络</h3>
 
@@ -253,23 +259,28 @@ docker update</p>
 
 <p>命令行方式</p>
 
-<p>ip addr | grep mtu
-docker network create -d macvlan
-    &ndash;subnet=<10.0.10.0/24> &ndash;gateway=<10.0.10.1>
-    -o parent=<eth0.10>
-    <macvlan10></p>
+<ul>
+<li>ip addr | grep mtu</li>
+<li>docker network create -d macvlan <br />
+&ndash;subnet=<10.0.10.0/24> &ndash;gateway=<10.0.10.1> <br />
+-o parent=(eth0.10) <br />
+(macvlan10)</li>
+</ul>
 
-<p>//Docker macvlan driver automagically creates host sub interfaces when you create a new macvlan network with sub interface as a parent.</p>
+<p><strong><em>你可以直接创建mvlan，sub-interface会自动创建</em></strong></p>
 
-<p>docker network ls</p>
+<ul>
+<li><p>docker network ls</p></li>
 
-<p>docker network connect <br />
-  &ndash;ip=<10.0.20.3> <br />
-  <macvlan20> <br />
-  <container1></p>
+<li><p>docker network connect <br />
+&ndash;ip=<10.0.20.3> <br />
+(macvlan20) <br />
+(container1)</p></li>
 
-<p>docker exec -ti container1 ip addr | grep &lsquo;mtu|inet&rsquo;
-//check container 1 IP address</p>
+<li><p>docker exec -ti container1 ip addr | grep &lsquo;mtu|inet&rsquo;</p></li>
+</ul>
+
+<p><strong><em>查看container IP</em></strong></p>
 
 <h2 id="nextcloud-container">NextCloud Container</h2>
 
@@ -277,8 +288,8 @@ docker network create -d macvlan
 
 <p>docker create <br />
   &ndash;name=nextcloud <br />
-  &ndash;net=<macvlan> <br />
-  &ndash;ip=<ip address> <br />
+  &ndash;net=(macvlan) <br />
+  &ndash;ip=(ip address) <br />
   -e PUID=1000 <br />
   -e PGID=100 <br />
   -e TZ=Europe/London <br />
@@ -289,6 +300,12 @@ docker network create -d macvlan
   linuxserver/nextcloud</p>
 
 <p>网络选择macvlan，默认端口443</p>
+
+<p><strong><em>你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/AppData/NextCloud和/sharedfolders/NextCloud，这样作为数据库的配置文件存储位置</em></strong></p>
+
+<p>NextCloud的配置文件在：/sharedfolders/AppData/NextCloud/www/nextcloud/config/config.php</p>
+
+<p>你可以修改数据库地址，数据库实例用户名和密码</p>
 
 <h2 id="maridb-container">MariDB Container</h2>
 
@@ -307,36 +324,46 @@ docker network create -d macvlan
 
 <p>网络选择Macvlan，默认端口3306</p>
 
-<p>数据库数据存储再OMV /sharedfolders/AppData/NextCloudDB目录上。</p>
+<p><strong><em>你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/AppData/NextCloudDB，这样作为数据库的配置文件存储位置</em></strong></p>
 
 <h3 id="绑定nextcloud服务器地址">绑定nextcloud服务器地址</h3>
 
-<p>cd /shareedfolder/AppData/Nextclouddb
-nano custom.cnf</p>
+<ul>
+<li>cd /shareedfolder/AppData/Nextclouddb</li>
+<li>nano custom.cnf <br />
+bind-address= (NextCloud IP)</li>
+</ul>
 
-<p>bind-address=<NextCloud IP></p>
-
-<p>绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库。</p>
+<p><strong><em>绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库</em></strong></p>
 
 <h3 id="新建数据库用户与实例">新建数据库用户与实例</h3>
 
-<p>cd
-clear</p>
+<ul>
+<li>cd</li>
+<li>clear</li>
+<li>docker restart nextclouddb</li>
+<li>docker exec -it nextclouddb bash</li>
+</ul>
 
-<p>docker restart nextclouddb
-docker exec -it nextclouddb bash
-//bash into nextclouddb container</p>
+<p><strong><em>进入container console界面</em></strong></p>
 
-<p>mysql -uroot -p
-//login SQL root password</p>
+<ul>
+<li>mysql -uroot -p</li>
+</ul>
 
-<p><strong><em>CREATE USER &lsquo;&lt;新建用户sup&gt;&rsquo;  IDENTIFIED BY &lsquo;&lt;用户sup的密码，注意引号&gt;&rsquo;</em></strong></p>
+<p><strong><em>输入之前创建Container时候MySQL root 密码</em></strong></p>
 
-<p><strong><em>CREATE DATABASE IF NOT EXISTS &lt;新建数据库实例 nextcloud&gt;</em></strong></p>
+<p>登录之后进行如下数据库实例创建</p>
 
-<p>*<strong>GRANT ALL PRIVILEGES ON nextcloud.* TO &lsquo;sup&rsquo; IDENTIFIED BY &lsquo;<sup 密码>&lsquo;</strong>*</p>
+<ol>
+<li><p>CREATE USER &lsquo;&lt;新建用户sup&gt;&rsquo;  IDENTIFIED BY &lsquo;&lt;用户sup的密码，注意引号&gt;&rsquo;</p></li>
 
-<p><strong><em>quit</em></strong></p>
+<li><p>CREATE DATABASE IF NOT EXISTS &lt;新建数据库实例 nextcloud&gt;</p></li>
+
+<li><p>GRANT ALL PRIVILEGES ON nextcloud.* TO &lsquo;sup&rsquo; IDENTIFIED BY &lsquo;<sup 密码>&lsquo;</p></li>
+
+<li><p>quit</p></li>
+</ol>
 
 <p>exit</p>
 
