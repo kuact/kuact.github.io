@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-10T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-10T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1300">
+<meta itemprop="wordCount" content="1480">
 
 
 
@@ -174,6 +174,7 @@
 <ul>
 <li><a href="#常用容器命令">常用容器命令</a></li>
 <li><a href="#docker-网络">Docker 网络</a></li>
+<li><a href="#docker-用户和用户文件映射">Docker 用户和用户文件映射</a></li>
 </ul></li>
 <li><a href="#nextcloud-container">NextCloud Container</a></li>
 <li><a href="#maridb-container">MariDB Container</a>
@@ -208,34 +209,35 @@
 <h3 id="常用容器命令">常用容器命令</h3>
 
 <ul>
-<li>docker ps</li>
+<li>docker ps <br />
+<strong><em>//检查运行容器状态</em></strong></li>
+<li>docker network ls</li>
+
+<li><p>docker network inspect (网络名字) <br />
+<strong><em>//To check the container assigned IP on the specified network</em></strong></p></li>
+
+<li><p>docker network connect</p></li>
+
+<li><p>docker ps</p></li>
+
+<li><p>docker containner list</p></li>
+
+<li><p>docker container stop (name&gt; / container id)</p></li>
+
+<li><p>docker restart</p></li>
+
+<li><p>docker container logs &ndash;tail 100 (name)</p></li>
+
+<li><p>docker container rm -f $ <br />
+<strong><em>//清空所有container</em></strong></p></li>
+
+<li><p>docker version</p></li>
+
+<li><p>docker update</p></li>
+
+<li><p>docker exec -it (container name) bash <br />
+<strong><em>//Enter a running container shell</em></strong></p></li>
 </ul>
-
-<p><strong><em>检查运行容器状态</em></strong>
-- docker network ls
-- docker network inspect (网络名字)</p>
-
-<p><strong><em>To check the container assigned IP on the specified network</em></strong></p>
-
-<ul>
-<li>docker network connect</li>
-<li>docker ps</li>
-<li>docker containner list</li>
-<li>docker container stop (name&gt; / container id)</li>
-<li>docker restart</li>
-<li>docker container logs &ndash;tail 100 (name)</li>
-<li>docker container rm -f $</li>
-</ul>
-
-<p><strong><em>delete all running and stopped containers</em></strong></p>
-
-<ul>
-<li>docker version</li>
-<li>docker update</li>
-<li>docker exec -it (container name) bash</li>
-</ul>
-
-<p><strong><em>Enter a running container shell</em></strong></p>
 
 <h3 id="docker-网络">Docker 网络</h3>
 
@@ -261,15 +263,13 @@
 
 <ul>
 <li>ip addr | grep mtu</li>
-<li>docker network create -d macvlan <br />
+
+<li><p>docker network create -d macvlan <br />
 &ndash;subnet=<10.0.10.0/24> &ndash;gateway=<10.0.10.1> <br />
 -o parent=(eth0.10) <br />
-(macvlan10)</li>
-</ul>
+(macvlan10) <br />
+<strong><em>//你可以直接创建mvlan，sub-interface会自动创建</em></strong></p></li>
 
-<p><strong><em>你可以直接创建mvlan，sub-interface会自动创建</em></strong></p>
-
-<ul>
 <li><p>docker network ls</p></li>
 
 <li><p>docker network connect <br />
@@ -277,10 +277,27 @@
 (macvlan20) <br />
 (container1)</p></li>
 
-<li><p>docker exec -ti container1 ip addr | grep &lsquo;mtu|inet&rsquo;</p></li>
+<li><p>docker exec -ti container1 ip addr | grep &lsquo;mtu|inet&rsquo; <br />
+<strong><em>//查看container IP</em></strong></p></li>
 </ul>
 
-<p><strong><em>查看container IP</em></strong></p>
+<h3 id="docker-用户和用户文件映射">Docker 用户和用户文件映射</h3>
+
+<p>docker是轻型虚拟机，所以要进行文件夹映射作为docker container的虚拟硬盘使用。使用OMV的文件，就设计用户名/用户组。OMV的新建用户，默认用户组都是users；需要命令行把用户从users组移除。</p>
+
+<ul>
+<li><p>usermod -a -G group1 user1 <br />
+<strong><em>把user1加入到group1组中</em></strong></p></li>
+
+<li><p>usermod -g group1 user1 <br />
+<strong><em>把user1加入到group1作为主用户组</em></strong></p></li>
+
+<li><p>gpasswd -d user1 group1 <br />
+<strong><em>把user1从group1中移除</em></strong></p></li>
+
+<li><p>id user1
+<strong><em>查看user1的id和组id，用于container 用户映射</em></strong></p></li>
+</ul>
 
 <h2 id="nextcloud-container">NextCloud Container</h2>
 
@@ -292,20 +309,18 @@
   &ndash;ip=(ip address) <br />
   -e PUID=1000 <br />
   -e PGID=100 <br />
-  -e TZ=Europe/London <br />
+  -e TZ=Asia/Singapore <br />
   -p 443:443 <br />
-  -v /sharedfolders/AppData/NextCloud:/config <br />
-  -v /sharedfolders/NextCloud:/data <br />
+  -v /sharedfolders/nextcloud/config:/config <br />
+  -v /sharedfolders/nextcloud/data:/data <br />
   &ndash;restart unless-stopped <br />
   linuxserver/nextcloud</p>
 
-<p>网络选择macvlan，默认端口443</p>
+<p>网络选择macvlan，默认端口443 <br />
+<strong><em>//你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/nextcloud/config和/sharedfolders/nextcloud/data，这样作为数据库的配置文件存储位置</em></strong></p>
 
-<p><strong><em>你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/AppData/NextCloud和/sharedfolders/NextCloud，这样作为数据库的配置文件存储位置</em></strong></p>
-
-<p>NextCloud的配置文件在：/sharedfolders/AppData/NextCloud/www/nextcloud/config/config.php</p>
-
-<p>你可以修改数据库地址，数据库实例用户名和密码</p>
+<p>NextCloud的配置文件在：/sharedfolders/nextcloud/config/www/nextcloud/config/config.php <br />
+<strong><em>//你可以修改数据库地址，数据库实例用户名和密码</em></strong></p>
 
 <h2 id="maridb-container">MariDB Container</h2>
 
@@ -315,16 +330,15 @@
   &ndash;name=nextclouddb <br />
   -e PUID=1000 <br />
   -e PGID=100 <br />
-  -e MYSQL_ROOT_PASSWORD=&lt;数据库Root密码&gt; <br />
+  -e MYSQL_ROOT_PASSWORD=(mysql_root_password) <br />
   -e TZ=Asia/Singapore <br />
   -p 3306:3306 <br />
-  -v /sharedfolders/AppData/NextCloudDB:/config <br />
+  -v /sharedfolders/nextcloud/db:/config <br />
   &ndash;restart always <br />
   linuxserver/mariadb</p>
 
-<p>网络选择Macvlan，默认端口3306</p>
-
-<p><strong><em>你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/AppData/NextCloudDB，这样作为数据库的配置文件存储位置</em></strong></p>
+<p>网络选择Macvlan，默认端口3306 <br />
+<strong><em>//你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/nextcloud，这样作为数据库的配置文件存储位置</em></strong></p>
 
 <h3 id="绑定nextcloud服务器地址">绑定nextcloud服务器地址</h3>
 
@@ -334,9 +348,11 @@
 bind-address= (NextCloud IP)</li>
 </ul>
 
-<p><strong><em>绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库</em></strong></p>
+<p><strong><em>//绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库</em></strong></p>
 
 <h3 id="新建数据库用户与实例">新建数据库用户与实例</h3>
+
+<p>SSH 登录</p>
 
 <ul>
 <li>cd</li>
@@ -345,24 +361,29 @@ bind-address= (NextCloud IP)</li>
 <li>docker exec -it nextclouddb bash</li>
 </ul>
 
-<p><strong><em>进入container console界面</em></strong></p>
+<p><strong><em>//进入container console界面</em></strong></p>
 
 <ul>
-<li>mysql -uroot -p</li>
+<li>mysql -uroot -p <br />
+<strong><em>//输入之前创建Container时候MySQL root 密码</em></strong></li>
 </ul>
-
-<p><strong><em>输入之前创建Container时候MySQL root 密码</em></strong></p>
 
 <p>登录之后进行如下数据库实例创建</p>
 
+<p>SELECT User, Host FROM mysql.user WHERE Host &lt;&gt; &lsquo;localhost&rsquo;; <br />
+<strong><em>//检查当前用户</em></strong></p>
+
+<p>CREATE USER &lsquo;db_user&rsquo; IDENTIFIED BY &lsquo;db_user_password&rsquo;; <br />
+<strong><em>//新建数据库用户</em></strong></p>
+
+<p>CREATE DATABASE IF NOT EXISTS nextclouddb; <br />
+<strong><em>//新建数据库实例</em></strong></p>
+
+<p>GRANT ALL PRIVILEGES ON nextclouddb.* TO &lsquo;db_user&rsquo; IDENTIFIED BY &lsquo;db_user_password&rsquo;;
+<strong><em>//文件型数据库，直接授权就可以</em></strong></p>
+
 <ol>
-<li><p>CREATE USER &lsquo;&lt;新建用户sup&gt;&rsquo;  IDENTIFIED BY &lsquo;&lt;用户sup的密码，注意引号&gt;&rsquo;</p></li>
-
-<li><p>CREATE DATABASE IF NOT EXISTS &lt;新建数据库实例 nextcloud&gt;</p></li>
-
-<li><p>GRANT ALL PRIVILEGES ON nextcloud.* TO &lsquo;sup&rsquo; IDENTIFIED BY &lsquo;<sup 密码>&lsquo;</p></li>
-
-<li><p>quit</p></li>
+<li>quit</li>
 </ol>
 
 <p>exit</p>
