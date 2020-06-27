@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-09T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-09T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1629">
+<meta itemprop="wordCount" content="1840">
 
 
 
@@ -183,7 +183,8 @@
 <li><a href="#snapraid配置文件">SnapRAID配置文件</a></li>
 <li><a href="#硬盘恢复流程">硬盘恢复流程</a></li>
 </ul></li>
-<li><a href="#彩蛋">彩蛋</a></li>
+<li><a href="#彩蛋1">彩蛋1</a></li>
+<li><a href="#彩蛋2">彩蛋2</a></li>
 <li><a href="#tips">Tips</a></li>
 <li><a href="#我是快乐的分隔线">我是快乐的分隔线</a></li>
 </ul></li>
@@ -338,7 +339,7 @@ disk d1 /srv/dev-disk-by-label-d1</p>
 
 <p>旧硬盘如果挂了，你可以直接删除；如果没挂，你可以在Shared Folder页面指定新硬盘。然后你就可以unmout文件系统，并删除了。</p>
 
-<h2 id="彩蛋">彩蛋</h2>
+<h2 id="彩蛋1">彩蛋1</h2>
 
 <p>你要是喜欢折腾，抛几个NAS方案自己去比较一下？</p>
 
@@ -350,12 +351,31 @@ disk d1 /srv/dev-disk-by-label-d1</p>
 
 <p>别问我为什呢，上面几个一个都没有用过。</p>
 
+<h2 id="彩蛋2">彩蛋2</h2>
+
+<p>如有你有兴趣折腾VMWARE， 你可以考虑一下RDM (Raw Device Mapping) 呀，这样你的OMV可以上S.M.A.R.T了，配上SnapRaid省心省力。</p>
+
+<ul>
+<li>Open a SSH session to the ESXi/ESX host</li>
+<li>SSH login the ESXi</li>
+
+<li><p>ls -l /vmfs/devices/disks <br />
+<strong><em>注：找到你要RDM的硬盘，比如 t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D ；不要在此硬盘上建datastore，否则还要RDM干嘛</em></strong></p></li>
+
+<li><p>vmkfstools -z /vmfs/devices/disks/t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D&rdquo;/vmfs/volumes/(datastore_name)/(vm_name)/2TB_RDM_1.vmdk&rdquo; <br />
+<strong><em>注：RDM的关键就是一个挂载点，这里创建一个vmdk 虚拟硬盘作为其挂载点</em></strong></p></li>
+
+<li><p>ESXi GUI界面VM创建硬盘，选择Existing Disk <br />
+<strong><em>VM要power off</em></strong></p></li>
+</ul>
+
 <h2 id="tips">Tips</h2>
 
 <ol>
 <li>OMV官网 <a href="https://www.openmediavault.org/">点我穿越门</a></li>
 <li>OMV外挂插件手动加载 <a href="https://forum.openmediavault.org/index.php?thread/5549-omv-extras-org-plugin/">点我穿越门</a></li>
 <li>OMV外挂插件命令行 <a href="https://www.omv-extras.org//">点我穿越门</a></li>
+<li>RDM教程 <a href="https://gist.github.com/Hengjie/1520114890bebe8f805d337af4b3a064#prerequisite-knowledge">点我穿越门</a></li>
 </ol>
 
 <hr />
