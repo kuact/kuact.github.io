@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-09T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-09T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1840">
+<meta itemprop="wordCount" content="1862">
 
 
 
@@ -356,17 +356,17 @@ disk d1 /srv/dev-disk-by-label-d1</p>
 <p>如有你有兴趣折腾VMWARE， 你可以考虑一下RDM (Raw Device Mapping) 呀，这样你的OMV可以上S.M.A.R.T了，配上SnapRaid省心省力。</p>
 
 <ul>
-<li>Open a SSH session to the ESXi/ESX host</li>
-<li>SSH login the ESXi</li>
+<li>ESXi GUI界面services 启用SSH</li>
+<li>SSH login the ESXi (root用户名)</li>
 
 <li><p>ls -l /vmfs/devices/disks <br />
-<strong><em>注：找到你要RDM的硬盘，比如 t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D ；不要在此硬盘上建datastore，否则还要RDM干嘛</em></strong></p></li>
+<strong>注：</strong> 找到你要RDM的硬盘，比如 t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D ；不要在此硬盘上建datastore，否则还要RDM干嘛</p></li>
 
 <li><p>vmkfstools -z /vmfs/devices/disks/t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D&rdquo;/vmfs/volumes/(datastore_name)/(vm_name)/2TB_RDM_1.vmdk&rdquo; <br />
-<strong><em>注：RDM的关键就是一个挂载点，这里创建一个vmdk 虚拟硬盘作为其挂载点</em></strong></p></li>
+<strong>注：</strong> RDM的关键就是一个挂载点，这里创建一个vmdk 虚拟硬盘作为其挂载点</p></li>
 
 <li><p>ESXi GUI界面VM创建硬盘，选择Existing Disk <br />
-<strong><em>VM要power off</em></strong></p></li>
+<strong>注：</strong> VM要power off</p></li>
 </ul>
 
 <h2 id="tips">Tips</h2>

@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-10T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-10T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1480">
+<meta itemprop="wordCount" content="1492">
 
 
 
@@ -210,11 +210,11 @@
 
 <ul>
 <li>docker ps <br />
-<strong><em>//检查运行容器状态</em></strong></li>
+<strong>注：</strong> 检查运行容器状态</li>
 <li>docker network ls</li>
 
 <li><p>docker network inspect (网络名字) <br />
-<strong><em>//To check the container assigned IP on the specified network</em></strong></p></li>
+<strong>注：</strong> To check the container assigned IP on the specified network</p></li>
 
 <li><p>docker network connect</p></li>
 
@@ -229,14 +229,14 @@
 <li><p>docker container logs &ndash;tail 100 (name)</p></li>
 
 <li><p>docker container rm -f $ <br />
-<strong><em>//清空所有container</em></strong></p></li>
+<strong>注：</strong> 清空所有container</p></li>
 
 <li><p>docker version</p></li>
 
 <li><p>docker update</p></li>
 
 <li><p>docker exec -it (container name) bash <br />
-<strong><em>//Enter a running container shell</em></strong></p></li>
+<strong>注：</strong> Enter a running container shell</p></li>
 </ul>
 
 <h3 id="docker-网络">Docker 网络</h3>
@@ -268,7 +268,7 @@
 &ndash;subnet=<10.0.10.0/24> &ndash;gateway=<10.0.10.1> <br />
 -o parent=(eth0.10) <br />
 (macvlan10) <br />
-<strong><em>//你可以直接创建mvlan，sub-interface会自动创建</em></strong></p></li>
+<strong>注：</strong> 你可以直接创建mvlan，sub-interface会自动创建</p></li>
 
 <li><p>docker network ls</p></li>
 
@@ -278,7 +278,7 @@
 (container1)</p></li>
 
 <li><p>docker exec -ti container1 ip addr | grep &lsquo;mtu|inet&rsquo; <br />
-<strong><em>//查看container IP</em></strong></p></li>
+<strong>注：</strong> 查看container IP</p></li>
 </ul>
 
 <h3 id="docker-用户和用户文件映射">Docker 用户和用户文件映射</h3>
@@ -287,16 +287,16 @@
 
 <ul>
 <li><p>usermod -a -G group1 user1 <br />
-<strong><em>把user1加入到group1组中</em></strong></p></li>
+<strong>注：</strong> 把user1加入到group1组中</p></li>
 
 <li><p>usermod -g group1 user1 <br />
-<strong><em>把user1加入到group1作为主用户组</em></strong></p></li>
+<strong>注：</strong> 把user1加入到group1作为主用户组</p></li>
 
 <li><p>gpasswd -d user1 group1 <br />
-<strong><em>把user1从group1中移除</em></strong></p></li>
+<strong>注：</strong> 把user1从group1中移除</p></li>
 
-<li><p>id user1
-<strong><em>查看user1的id和组id，用于container 用户映射</em></strong></p></li>
+<li><p>id user1 <br />
+<strong>注：</strong> 查看user1的id和组id，用于container 用户映射</p></li>
 </ul>
 
 <h2 id="nextcloud-container">NextCloud Container</h2>
@@ -317,10 +317,10 @@
   linuxserver/nextcloud</p>
 
 <p>网络选择macvlan，默认端口443 <br />
-<strong><em>//你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/nextcloud/config和/sharedfolders/nextcloud/data，这样作为数据库的配置文件存储位置</em></strong></p>
+<strong>注：</strong> 你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/nextcloud/config和/sharedfolders/nextcloud/data，这样作为数据库的配置文件存储位置</p>
 
 <p>NextCloud的配置文件在：/sharedfolders/nextcloud/config/www/nextcloud/config/config.php <br />
-<strong><em>//你可以修改数据库地址，数据库实例用户名和密码</em></strong></p>
+<strong>注：</strong> 你可以修改数据库地址，数据库实例用户名和密码</p>
 
 <h2 id="maridb-container">MariDB Container</h2>
 
@@ -338,17 +338,16 @@
   linuxserver/mariadb</p>
 
 <p>网络选择Macvlan，默认端口3306 <br />
-<strong><em>//你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/nextcloud，这样作为数据库的配置文件存储位置</em></strong></p>
+<strong>注：</strong> 你要提前在OMV GUI新建共享文件夹，比如/sharedfolders/nextcloud，这样作为数据库的配置文件存储位置</p>
 
 <h3 id="绑定nextcloud服务器地址">绑定nextcloud服务器地址</h3>
 
 <ul>
 <li>cd /shareedfolder/AppData/Nextclouddb</li>
 <li>nano custom.cnf <br />
-bind-address= (NextCloud IP)</li>
+bind-address= (NextCloud IP) <br />
+<strong>注：</strong> 绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库</li>
 </ul>
-
-<p><strong><em>//绑定NextCloud Server IP，意思是只有NextCloud服务器才可以访问数据库</em></strong></p>
 
 <h3 id="新建数据库用户与实例">新建数据库用户与实例</h3>
 
@@ -358,35 +357,32 @@ bind-address= (NextCloud IP)</li>
 <li>cd</li>
 <li>clear</li>
 <li>docker restart nextclouddb</li>
-<li>docker exec -it nextclouddb bash</li>
-</ul>
 
-<p><strong><em>//进入container console界面</em></strong></p>
+<li><p>docker exec -it nextclouddb bash <br />
+<strong>注：</strong> 进入container console界面</p></li>
 
-<ul>
-<li>mysql -uroot -p <br />
-<strong><em>//输入之前创建Container时候MySQL root 密码</em></strong></li>
+<li><p>mysql -uroot -p <br />
+<strong>注：</strong> 输入之前创建Container时候MySQL root 密码</p></li>
 </ul>
 
 <p>登录之后进行如下数据库实例创建</p>
 
 <p>SELECT User, Host FROM mysql.user WHERE Host &lt;&gt; &lsquo;localhost&rsquo;; <br />
-<strong><em>//检查当前用户</em></strong></p>
+<strong>注：</strong> 检查当前用户</p>
 
-<p>CREATE USER &lsquo;db_user&rsquo; IDENTIFIED BY &lsquo;db_user_password&rsquo;; <br />
-<strong><em>//新建数据库用户</em></strong></p>
+<p>CREATE USER &lsquo;db_user&rsquo; IDENTIFIED BY &lsquo;db_user_password&rsquo;;  <br />
+<strong>注：</strong> 新建数据库用户</p>
 
-<p>CREATE DATABASE IF NOT EXISTS nextclouddb; <br />
-<strong><em>//新建数据库实例</em></strong></p>
+<p>CREATE DATABASE IF NOT EXISTS nextclouddb;  <br />
+<strong>注：</strong> 新建数据库实例</p>
 
-<p>GRANT ALL PRIVILEGES ON nextclouddb.* TO &lsquo;db_user&rsquo; IDENTIFIED BY &lsquo;db_user_password&rsquo;;
-<strong><em>//文件型数据库，直接授权就可以</em></strong></p>
+<p>GRANT ALL PRIVILEGES ON nextclouddb.* TO &lsquo;db_user&rsquo; IDENTIFIED BY &lsquo;db_user_password&rsquo;; <br />
+<strong>注：</strong> 文件型数据库，直接授权就可以</p>
 
-<ol>
+<ul>
 <li>quit</li>
-</ol>
-
-<p>exit</p>
+<li>exit</li>
+</ul>
 
 <h2 id="tips">Tips</h2>
 
