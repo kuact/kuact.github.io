@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2020-05-08T09:17:16&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-08T09:17:16&#43;00:00" />
-<meta itemprop="wordCount" content="1928">
+<meta itemprop="wordCount" content="2064">
 
 
 
@@ -173,9 +173,11 @@
 <li><a href="#题记">题记</a></li>
 <li><a href="#snapraid好处多多">Snapraid好处多多</a></li>
 <li><a href="#snapraid的使用">Snapraid的使用</a></li>
+<li><a href="#snapraid移除硬盘">Snapraid移除硬盘</a></li>
 <li><a href="#snapraid配置文件">Snapraid配置文件</a></li>
 <li><a href="#snapraid功能限制">Snapraid功能限制</a></li>
 <li><a href="#tips">Tips</a></li>
+<li><a href="#我是快乐的分隔线">我是快乐的分隔线</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -224,26 +226,31 @@
 <ol>
 <li><p>快照(snapshot)</p>
 
-<p>snapraid sync <br />
-<strong>注：</strong> 使用增量备份策略，第一次做快照会进行全盘索引，跑个大半天？后续增量快照会比较快</p>
+<p>snapraid sync</p>
 
-<p>snapraid diff <br />
-<strong>注：</strong> 列出下次要备份的文件列表（从上次快照到现在的文件变动）</p>
+<p><strong>小提示：</strong> 使用增量备份策略，第一次做快照会进行全盘索引，跑个大半天？后续增量快照会比较快</p>
 
-<p>snapraid list | more <br />
-<strong>注：</strong> 列出快照索引文件列表</p></li>
+<p>snapraid diff</p>
+
+<p><strong>小提示：</strong> 列出下次要备份的文件列表（从上次快照到现在的文件变动）</p>
+
+<p>snapraid list | more</p>
+
+<p><strong>小提示：</strong> 列出快照索引文件列表</p></li>
 
 <li><p>数据完整性检查</p>
 
-<p>snapraid scrub <br />
-<strong>注：</strong> 数据存储时间越长，越容易产生完整性问题。此操作检查10天前8%的硬盘数据完整性。你要100%全覆盖检查200天前的数据完整性？</p>
+<p>snapraid scrub</p>
+
+<p><strong>小提示：</strong> 数据存储时间越长，越容易产生完整性问题。此操作检查10天前8%的硬盘数据完整性。你要100%全覆盖检查200天前的数据完整性？</p>
 
 <p>snapraid scrub -p 100 -o 200 scrub</p></li>
 
 <li><p>快照状态</p>
 
-<p>snapraid status <br />
-<strong>注：</strong> 看到no error就ok；如果有坏道/完整性错误，标记之</p>
+<p>snapraid status</p>
+
+<p><strong>小提示：</strong> 看到no error就ok；如果有坏道/完整性错误，标记之</p>
 
 <p>snapraid -e fix</p></li>
 
@@ -255,13 +262,15 @@
 <ul>
 <li><p>恢复单个文件</p>
 
-<p>snapraid fix -f &lsquo;&lt;文件名&gt;&rsquo; <br />
-<strong>注：</strong> 单个文件恢复，不用写文件路径:  snapraid fix -f &lsquo;Feels Like Summer&rsquo;</p></li>
+<p>snapraid fix -f &lsquo;&lt;文件名&gt;&rsquo;</p>
+
+<p><strong>小提示：</strong> 单个文件恢复，不用写文件路径:  snapraid fix -f &lsquo;Feels Like Summer&rsquo;</p></li>
 
 <li><p>恢复整个文件夹</p>
 
-<p>snapraid fix -f &lsquo;&lt;文件目录&gt;&rsquo; <br />
-<strong>注：</strong> 文件夹(含文件)恢复，只需要输入OMV的相对文件夹路径:  snapraid fix -f &lsquo;/Media/&rsquo;</p>
+<p>snapraid fix -f &lsquo;&lt;文件目录&gt;&rsquo;</p>
+
+<p><strong>小提示：</strong> 文件夹(含文件)恢复，只需要输入OMV的相对文件夹路径:  snapraid fix -f &lsquo;/Media/&rsquo;</p>
 
 <p>OMV的共享文件夹目录通过在mntent xml进行设置 /srv/dev-disk-by-label-VOLUME1</p>
 
@@ -273,17 +282,52 @@
 
 <li><p>恢复上次快照前的误删除文件</p>
 
-<p>snapraid fix -m <br />
-<strong>注：</strong> 有点版本回滚的意思，snapraid是做文件快照，但它不会存储多个文件快照，所以离线备份不能丢。</p></li>
+<p>snapraid fix -m</p>
+
+<p><strong>小提示：</strong> 有点版本回滚的意思，snapraid是做文件快照，但它不会存储多个文件快照，所以离线备份不能丢。</p></li>
 
 <li><p>恢复整个硬盘</p>
 
-<p>snapraid -d &lt;硬盘名&gt; -l fix.log fix <br />
-<strong>注：</strong> 全盘扫描，哪怕没有数据变更，速度很慢很慢，很慢很慢，很慢很慢。</p>
+<p>snapraid -d &lt;硬盘名&gt; -l fix.log fix</p>
 
-<p>snapraid -d &lt;硬盘名&gt; -a check <br />
-<strong>注：</strong> 恢复后进行数据验证</p></li>
+<p><strong>小提示：</strong> 全盘扫描，哪怕没有数据变更，速度很慢很慢，很慢很慢，很慢很慢。</p>
+
+<p>snapraid -d &lt;硬盘名&gt; -a check</p>
+
+<p><strong>小提示：</strong> 恢复后进行数据验证</p></li>
 </ul>
+
+<h2 id="snapraid移除硬盘">Snapraid移除硬盘</h2>
+
+<p>这个得要CLI 操作了，目标硬盘d2 (snapraid的命名d2 硬盘）</p>
+
+<p>SSH 登录OMV</p>
+
+<p>找一个空目录，比如
+#cd /etc
+#mkdir tmp</p>
+
+<p>#nano /etc/snapraid.conf</p>
+
+<ul>
+<li>#content /srv/874d8aa7-1214-40c8-8bbd-c2347692661d/snapraid.content</li>
+<li>#disk d2 /srv/874d8aa7-1214-40c8-8bbd-c2347692661d</li>
+<li>disk d2 /etc/tmp</li>
+</ul>
+
+<p>#snapraid sync -E</p>
+
+<p>#snapraid status</p>
+
+<p>你会发现d2没有use了</p>
+
+<p>#nano /etc/snapraid.conf</p>
+
+<ul>
+<li>#disk d2 /etc/tmp</li>
+</ul>
+
+<p>然后d2就没有了</p>
 
 <h2 id="snapraid配置文件">Snapraid配置文件</h2>
 
@@ -291,16 +335,12 @@
 
 <p>ls -l /etc/sn*</p>
 
-<p>划重点就是设定硬盘类型</p>
+<p>划重点就是设定硬盘类型
+- data （数据盘）: 放电影，放音乐，放飞自我&hellip;..
+- content （索引文件）：所有数据盘和校验盘里都保存一份（索引文件丢了，咋恢复）
+- parity （校验盘）：不可以存储数据！一个校验盘可以支持四个数据盘，前提是校验盘一定是所有硬盘中最大容量的。</p>
 
-<ul>
-<li><p>data （数据盘）: 放电影，放音乐，放飞自我&hellip;..</p></li>
-
-<li><p>content （索引文件）：所有数据盘和校验盘里都保存一份（索引文件丢了，咋恢复）</p></li>
-
-<li><p>parity （校验盘）：不可以存储数据！一个校验盘可以支持四个数据盘，前提是校验盘一定是所有硬盘中最大容量的。 <br />
-<strong>注：</strong> 一个校验盘只能恢复一个数据盘，所以如果同时两块硬盘挂了，你只能其中恢复部分数据。所以离线备份还是不能丢（万一连续几块硬盘坏呢？）</p></li>
-</ul>
+<p><strong>小提示：</strong> 一个校验盘只能恢复一个数据盘，所以如果同时两块硬盘挂了，你只能其中恢复部分数据。所以离线备份还是不能丢（万一连续几块硬盘坏呢？）</p>
 
 <h2 id="snapraid功能限制">Snapraid功能限制</h2>
 
@@ -309,12 +349,13 @@
 
 <p>如果ssh到OMV服务器上做单个目录恢复的话，目录权限会变成root；意味着恢复之后NAS的用户就无法读写了。所以只能硬改用户权限了</p>
 
-<p>#chown -R (NAS User) (folder path)</p></li>
+<p>#chown -R <NAS User> <folder path></p></li>
 
 <li><p>Snapraid只做硬盘快照(文件层面)，你可以定时备份策略1小时，1天，1星期；但就是不能实时。</p></li>
 
-<li><p>每个文件都会建立索引，所以如果硬盘上有大量的琐碎文件，索引就会变的非常大 <br />
-<strong>注：</strong> 家用NAS系列，要搞企业级，还是别当真了。</p></li>
+<li><p>每个文件都会建立索引，所以如果硬盘上有大量的琐碎文件，索引就会变的非常大</p>
+
+<p><strong>小提示：</strong> 家用NAS系列，要搞企业级，还是别当真了。</p></li>
 </ol>
 
 <h2 id="tips">Tips</h2>
@@ -323,6 +364,10 @@
 <li>Snapraid官方指南 <a href="https://www.snapraid.it/manual">点我穿越门</a></li>
 <li>硬盘可以活多久<a href="https://www.backblaze.com/blog/how-long-do-disk-drives-last/">点我穿越门</a></li>
 </ol>
+
+<hr />
+
+<h2 id="我是快乐的分隔线">我是快乐的分隔线</h2>
 
 <p><div class='align-center'>
   <p><img src="/img/AD.jpg" alt="AD" title="AD" /></p>
