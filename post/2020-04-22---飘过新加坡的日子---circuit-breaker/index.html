@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>飘过新加坡的日子 - Circuit Breaker - 生活不在别处</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="kuact" />
+  <meta name="description" content="这事要从何说起呢，总之国内疫情爆发的时候，新加坡饭照吃，马照跑，舞照跳；直到DORSCON升级到的橙色预警。 公司开始分组，想想一咬牙让Eth" />
+
+  <meta name="keywords" content="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.2" />
+
+
+<link rel="canonical" href="https://www.kuact.com/post/2020-04-22---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---circuit-breaker/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="飘过新加坡的日子 - Circuit Breaker" />
+<meta property="og:description" content="这事要从何说起呢，总之国内疫情爆发的时候，新加坡饭照吃，马照跑，舞照跳；直到DORSCON升级到的橙色预警。 公司开始分组，想想一咬牙让Eth" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.kuact.com/post/2020-04-22---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---circuit-breaker/" />
+
+
+
+<meta property="article:published_time" content="2020-04-22T19:17:16&#43;00:00"/>
+
+<meta property="article:modified_time" content="2020-04-22T19:17:16&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="飘过新加坡的日子 - Circuit Breaker">
+<meta itemprop="description" content="这事要从何说起呢，总之国内疫情爆发的时候，新加坡饭照吃，马照跑，舞照跳；直到DORSCON升级到的橙色预警。 公司开始分组，想想一咬牙让Eth">
+
+
+<meta itemprop="datePublished" content="2020-04-22T19:17:16&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-22T19:17:16&#43;00:00" />
+<meta itemprop="wordCount" content="389">
+
+
+
+<meta itemprop="keywords" content="新加坡," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="飘过新加坡的日子 - Circuit Breaker"/>
+<meta name="twitter:description" content="这事要从何说起呢，总之国内疫情爆发的时候，新加坡饭照吃，马照跑，舞照跳；直到DORSCON升级到的橙色预警。 公司开始分组，想想一咬牙让Eth"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">KUACT</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Timeline</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">KUACT</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Timeline</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">飘过新加坡的日子 - Circuit Breaker</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-22 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E6%96%B0%E5%8A%A0%E5%9D%A1/"> 新加坡 </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#tips">Tips</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p><font face="微软雅黑"></p>
+
+<p>这事要从何说起呢，总之国内疫情爆发的时候，新加坡饭照吃，马照跑，舞照跳；直到DORSCON升级到的橙色预警。</p>
+
+<p>公司开始分组，想想一咬牙让Ethan和Ella在家自我隔离了2个星期。殊不知，这两个星期把我们折腾的够呛。然后，然后和L纠结了一下，还是继续去学校吧&hellip;. 现在还能去，后面不能去的时候再咬牙坚持把。</p>
+
+<p>其实挺能理解现在美国人拿枪上街游行的，比起饿死，他们选择承担被感染的风险。</p>
+
+<p>总之Circuit Breaker来了，对经济生活各方面影响超级大。新加坡不是香港，没有大树可靠，现在拿着老本派钱，鸭梨山大。</p>
+
+<p>另外我还真没搞明白CB和红色预警有啥区别。总之两个小家伙都得在家里趴着。还别说，Ethan经过几番点播，几乎在学习开挂的路上。</p>
+
+<p>全家人在家闷久了，就开始比赛数独。哎，真的老了，记忆力下降的不是一点半点。</p>
+
+<p>谁来拯救我的失眠&hellip;..</p>
+
+<h2 id="tips">Tips</h2>
+
+<ol>
+<li>DORSCON拾遗<a href="https://www.gov.sg/article/what-do-the-different-dorscon-levels-mean">点我官网</a></li>
+</ol>
+
+<p><div class='align-center'>
+  <p><img src="/img/AD.jpg" alt="AD" title="AD" /></p>
+
+</div>
+</font></p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/%E6%96%B0%E5%8A%A0%E5%9D%A1/">新加坡</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">天天向上 - NAS三部曲1：Snapraid</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2020-01-10---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E6%9A%B9%E7%B2%92siem-reap%E5%90%B4%E5%93%A5%E7%AA%9Fangkor-wat%E7%9A%84%E6%97%A5%E5%87%BA%E6%97%A5%E8%90%BD/">
+            <span class="next-text nav-default">飘过新加坡的日子 - 暹粒(Siem Reap)吴哥窟(Angkor Wat)的日出日落 - 2020版</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://www.kuact.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2006 - 
+    2024
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">EVAN</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121805387-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121805387-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

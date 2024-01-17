@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>天天向上 on 生活不在别处</title>
+    <link>https://www.kuact.com/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/</link>
+    <description>Recent content in 天天向上 on 生活不在别处</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Jun 2020 09:17:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.kuact.com/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>天天向上 - Ruckus 无线WIFI AP的网络优化</title>
+      <link>https://www.kuact.com/post/2020-06-21---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---ruckus-%E6%97%A0%E7%BA%BFwifi-ap%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sun, 21 Jun 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-06-21---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---ruckus-%E6%97%A0%E7%BA%BFwifi-ap%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</guid>
+      <description>不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房</description>
+    </item>
+    
+    <item>
+      <title>天天向上 - WINDOWNS 10操作系统备份与还原，你还在用Ghost么</title>
+      <link>https://www.kuact.com/post/2020-06-18---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---windowns-10%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8ghost%E4%B9%88/</link>
+      <pubDate>Thu, 18 Jun 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-06-18---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---windowns-10%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8ghost%E4%B9%88/</guid>
+      <description>这是一个鄙视链问题么？额&amp;hellip;..好像是的。这前两天，我还在用Ghost做操作系统镜像还原。sigh，不思进取，真是要被piapi</description>
+    </item>
+    
+    <item>
+      <title>天天向上 - NAS三部曲3：NextCloud</title>
+      <link>https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/</link>
+      <pubDate>Sun, 10 May 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/</guid>
+      <description>OMV上部署Docker，然后再是Docker上玩转NextCloud。为毛不单独部署NextCloud？因为OMV的GUI好用呀，哦，忘记</description>
+    </item>
+    
+    <item>
+      <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV）</title>
+      <link>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</link>
+      <pubDate>Sat, 09 May 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/</guid>
+      <description>题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是</description>
+    </item>
+    
+    <item>
+      <title>天天向上 - NAS三部曲1：Snapraid</title>
+      <link>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</link>
+      <pubDate>Fri, 08 May 2020 09:17:16 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/</guid>
+      <description>最近在折腾NAS，家里的那块Mycloud看着要挂，做一个自检，整个SMART都没反应了。毕竟mycloud是Debian深度定制版，我也不</description>
+    </item>
+    
+    <item>
+      <title>天天向上 – GNS3 VM Esxi安装部署</title>
+      <link>https://www.kuact.com/post/2018-08-24---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A--gns3-vm-esxi%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Fri, 24 Aug 2018 09:17:15 +0000</pubDate>
+      
+      <guid>https://www.kuact.com/post/2018-08-24---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A--gns3-vm-esxi%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
+      <description>最近手上有一个CISCO网络项目要交付，设计上有点复杂，只好到处找模拟器使劲折腾。 GNS3就是这样的网络可视化模拟器，其主要支持： Dynamips: CISCO IOS</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>天天向上 - Ruckus 无线WIFI AP的网络优化 - 生活不在别处</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="kuact" />
+  <meta name="description" content="不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房" />
+
+  <meta name="keywords" content="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.2" />
+
+
+<link rel="canonical" href="https://www.kuact.com/post/2020-06-21---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---ruckus-%E6%97%A0%E7%BA%BFwifi-ap%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="天天向上 - Ruckus 无线WIFI AP的网络优化" />
+<meta property="og:description" content="不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.kuact.com/post/2020-06-21---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---ruckus-%E6%97%A0%E7%BA%BFwifi-ap%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/" />
+
+
+
+<meta property="article:published_time" content="2020-06-21T09:17:16&#43;00:00"/>
+
+<meta property="article:modified_time" content="2020-06-21T09:17:16&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="天天向上 - Ruckus 无线WIFI AP的网络优化">
+<meta itemprop="description" content="不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房">
+
+
+<meta itemprop="datePublished" content="2020-06-21T09:17:16&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-21T09:17:16&#43;00:00" />
+<meta itemprop="wordCount" content="2142">
+
+
+
+<meta itemprop="keywords" content="天天向上," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="天天向上 - Ruckus 无线WIFI AP的网络优化"/>
+<meta name="twitter:description" content="不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">KUACT</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Timeline</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">KUACT</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Timeline</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">天天向上 - Ruckus 无线WIFI AP的网络优化</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-06-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/"> 天天向上 </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#解决方案">解决方案</a></li>
+<li><a href="#ap-控制器-wlan-controler">AP 控制器 (WLAN Controler)</a></li>
+<li><a href="#ruckus-ap">Ruckus AP</a></li>
+<li><a href="#无线网络优化">无线网络优化</a>
+<ul>
+<li><a href="#单个wlan设置">单个WLAN设置</a></li>
+<li><a href="#全局信道设置">全局信道设置</a></li>
+<li><a href="#ap设置">AP设置</a></li>
+</ul></li>
+<li><a href="#ap选型">AP选型</a></li>
+<li><a href="#tips">Tips</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p><font face="微软雅黑"></p>
+
+<p>不就是穿墙么，关于无线的东西真没有什么好说的；以为弄个华硕八角鱼就像挂个基站冲出8条街？稍微了解一下无线原理，影响无线网络速度最大的因素是房屋结构/墙体的阻挡，硬伤在那呢。</p>
+
+<p>最好的办法就是每个房间都放一个AP。那么问题来了，网线到位了没有？POE交换机到位了没有？想着共享SSID， 无缝AP漫游，AP频道冲突切换；你还得有个AP控制器。</p>
+
+<p>接着市场上就有了AP mesh组网。Mesh组网靠谱不？一半一半，靠谱的是它摆脱了网线的接入限制，不靠谱的是它还是基于无线信号传输的，因此房屋结构对信号的削弱与阻隔并不是你闭上眼睛就消失了；另外一个额外信道的占用和干扰。</p>
+
+<h2 id="解决方案">解决方案</h2>
+
+<ol>
+<li>一个无线路由器打遍天下：基本能解决家庭用户70%的覆盖的问题。额，厕所大概率是覆盖不到的。</li>
+<li>AP无线Mesh组网：如果天线和安装位置设计的好的话，基本能解决覆盖死角。但是不能保证稳定的速率和信号</li>
+<li>集成控制器的AP组网：不需要额外的AP控制器，用2-3个AP组网而实现全屋覆盖</li>
+</ol>
+
+<h2 id="ap-控制器-wlan-controler">AP 控制器 (WLAN Controler)</h2>
+
+<p>AP控制器就好像AP的调度中心，实现多个AP的协同工作；企业级的应用都会有单独的AP控制器。</p>
+
+<ul>
+<li>第一梯队：Cisco（含Meraki），Aruba（HPE）和Ruckus</li>
+<li>第二梯队：Ubiquiti，Huawei，H3C，Motorola，Aerohive</li>
+</ul>
+
+<p>而消费者级别就是Tp-link，华硕，D-link，小米这些了。</p>
+
+<p>只要涉及大范围WIFI覆盖，你就离不了AP控制器的作用。但是广大的中小企业市场，并不需要大量的AP组网。</p>
+
+<p>对于小范围AP组网</p>
+
+<ul>
+<li>AP控制器集成到AP里面（Ruckus的unleashed）</li>
+<li>云化（Cisco的Meraki）</li>
+<li>软AP（Ubiquiti）</li>
+<li>AP控制器集成到防火墙里（Fortigate）</li>
+</ul>
+
+<h2 id="ruckus-ap">Ruckus AP</h2>
+
+<p>今天的重点是Ruckus，选它的原因：</p>
+
+<ul>
+<li>AP控制器集成在AP当中，Unleashed 版本可以支持最多25个AP组网</li>
+<li>企业级产品都会有服务合同，但Ruckus AP过保以后依然可以免费升级，只要你注册一个账号即可</li>
+<li>手机APP实时监控（如果在外网，你要VPN到家里）</li>
+<li>拥有企业级的无线优化设置</li>
+<li>天线设计有一手，号称额外3dB Gain</li>
+</ul>
+
+<h2 id="无线网络优化">无线网络优化</h2>
+
+<p>802.11的底层数据交换是基于共享信道轮询(CSMA/CA)。简单说来，同一信道（Channel）下，用户越多，轮询控制RTS/CTS (Request to Send/Clear to Send)就越复杂，因此每个用户分到的速度就越慢。</p>
+
+<p>解决方案三板斧：</p>
+
+<ul>
+<li>信道切换（避免其他AP同一信道的干扰）</li>
+<li>信道扩容（20Mhz带宽，向40Mhz，80Mhz和160Mhz推进）</li>
+<li>信道迁移 （避免2.4Ghz信道，使用5Ghz）</li>
+</ul>
+
+<h3 id="单个wlan设置">单个WLAN设置</h3>
+
+<ul>
+<li>Fast BSS Transition (Disabled by default) ：基于802.11r协议，用于AP间的快速切换</li>
+<li>Radio Resource Management (Disabled by default) ：基于802.11k协议，同样用于AP间的快速切换</li>
+<li>Wireless Client Isolation：因为多个AP组网，所以要选from all hosts on the same VLAN。如果AP上没有做NAT，你还要白名单网关</li>
+<li>Access VLAN：VLAN域隔离</li>
+</ul>
+
+<h3 id="全局信道设置">全局信道设置</h3>
+
+<ul>
+<li>Background Scanning: 信道扫描，如果发现拥塞或者干扰，可以通知用户进行信道切换。因为家庭的无线环境比较稳定，所以扫描时间不用太频繁，1800秒？</li>
+<li>Self healing：AP发射功率自动优化，多AP协同工作下，发射功率并非越大越好(Saturation)</li>
+<li>Channel Fly：实时监控信道状态而实现信道切换，暂时没有测试</li>
+<li>Client Load Balancing：2.4Ghz</li>
+<li>Band Balancing：80/20原则，把2.4Ghz只有20%</li>
+</ul>
+
+<h3 id="ap设置">AP设置</h3>
+
+<ul>
+<li>2.4Ghz允许1，6，11信道(no overlapped)或者2，7，12；又或者3，8，13。信道带宽20Mh</li>
+<li>2.4G Protection mode：开启RTS/CTS(Request to Send/Clear to Send)</li>
+<li>5Ghz的所有信道都不会overlapped (20Mhz)，信道带宽增加到80Mhz （42，58，106，122，138和155）</li>
+</ul>
+
+<h2 id="ap选型">AP选型</h2>
+
+<p>AP大多都会标注天线的设计，比如2x2:2(Transmit x Receive:Spatia_Streams)。啥意思呢？就是AP里有两个Tx和两个Rx天线；这个就很关键，意味着AP可以在2.4Ghz和5Ghz的信道下同时工作。另外的2表示在同一个信道下可以发送2路SS （Spatial Stream）。</p>
+
+<p>现在新的AP流行推MIMO概念，其实MIMO技术从802.11n就开始有了，其支持单个用户最大3个SS，峰值速率450Mbps；所以802.11n叫SU(Single User)-MIMO。</p>
+
+<p>等到了802.11ac wave 1（只使用5Ghz信道），最大3个SS，峰值速率1300Mbps。从802.11ac wave 2开始支持MU(Multiple User)-MIMO，4个SS了；因此天线设计上就上4x4:4了。</p>
+
+<p>MIMO必须是双向的，我们的笔记本，手机现在大部分已经支持2x2MIMO，跑个300Mbps总没问题吧。至于最近火起来的802.11ax （WIFI 6），理论支持8 Stream；但要客户端支持，还有几年的路要走。</p>
+
+<p>总结一下：搞个4x4:4的802.11AC wave2就已经很好了。</p>
+
+<h2 id="tips">Tips</h2>
+
+<ol>
+<li>Ruckus升级官网 <a href="https://support.ruckuswireless.com/software">点我穿越</a></li>
+<li>Ruckus Unleashed 200.7版本说明书  <a href="https://docs.ruckuswireless.com/unleashed/200.7/GUID-543E1779-1D73-4BB2-96F0-7242A40C6225.html">点我穿越</a></li>
+<li>WIFI无线漫游原理 <a href="https://www.youtube.com/watch?v=3lvIXXAdLR4">点我穿越</a></li>
+<li>WIFI无线干扰原理 <a href="https://www.youtube.com/watch?v=UxDdwGhSf4o">点我穿越</a></li>
+<li>WIFI底层数据交换原理 <a href="https://www.youtube.com/watch?v=PcbTMSf0D2M">点我穿越</a></li>
+<li>WIFI 2.4Ghz 和5G hz原理 <a href="https://www.youtube.com/watch?v=QlJnZFeKIRA">点我穿越</a></li>
+<li>WIFI 6 介绍 <a href="https://www.ni.com/en-sg/innovations/white-papers/16/introduction-to-802-11ax-high-efficiency-wireless.html">点我穿越</a></li>
+</ol>
+
+<p><div class='align-center'>
+  <p><img src="/img/AD.jpg" alt="AD" title="AD" /></p>
+
+</div>
+</font></p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/">天天向上</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-08-05---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E6%B1%BD%E8%BD%A6%E6%97%A5%E5%B8%B8%E4%BF%9D%E5%85%BB%E6%8C%87%E5%8D%97%E4%B8%8E%E8%B4%B9%E7%94%A8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">飘过新加坡的日子 - 汽车日常保养指南与费用</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2020-06-20---%E9%A3%98%E8%BF%87%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E6%97%A5%E5%AD%90---%E7%BB%99%E7%88%B6%E6%AF%8D%E6%A4%8D%E7%89%99dental-implants/">
+            <span class="next-text nav-default">飘过新加坡的日子 - 给父母植牙（Dental Implants）</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://www.kuact.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2006 - 
+    2024
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">EVAN</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121805387-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121805387-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

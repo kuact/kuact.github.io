@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>天天向上 - NAS三部曲2：OpenMediaVault（OMV） - 生活不在别处</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="kuact" />
+  <meta name="description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是" />
+
+  <meta name="keywords" content="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.2" />
+
+
+<link rel="canonical" href="https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="天天向上 - NAS三部曲2：OpenMediaVault（OMV）" />
+<meta property="og:description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.kuact.com/post/2020-05-09---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B22openmediavaultomv/" />
+
+
+
+<meta property="article:published_time" content="2020-05-09T09:17:16&#43;00:00"/>
+
+<meta property="article:modified_time" content="2020-05-09T09:17:16&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="天天向上 - NAS三部曲2：OpenMediaVault（OMV）">
+<meta itemprop="description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是">
+
+
+<meta itemprop="datePublished" content="2020-05-09T09:17:16&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-09T09:17:16&#43;00:00" />
+<meta itemprop="wordCount" content="1854">
+
+
+
+<meta itemprop="keywords" content="天天向上," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="天天向上 - NAS三部曲2：OpenMediaVault（OMV）"/>
+<meta name="twitter:description" content="题记 上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。 其实OMV也是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">KUACT</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Timeline</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">KUACT</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Timeline</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">天天向上 - NAS三部曲2：OpenMediaVault（OMV）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-09 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/"> 天天向上 </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#题记">题记</a></li>
+<li><a href="#omv安装部署">OMV安装部署</a>
+<ul>
+<li><a href="#硬盘-disks">硬盘 (Disks)</a></li>
+<li><a href="#文件系统-file-systems">文件系统 (File Systems)</a></li>
+<li><a href="#共享文件夹-shared-folders">共享文件夹 (Shared Folders)</a></li>
+</ul></li>
+<li><a href="#omv扩展插件">OMV扩展插件</a></li>
+<li><a href="#snapraid-硬盘恢复">SnapRAID 硬盘恢复</a>
+<ul>
+<li><a href="#snapraid配置文件">SnapRAID配置文件</a></li>
+<li><a href="#硬盘恢复流程">硬盘恢复流程</a></li>
+</ul></li>
+<li><a href="#彩蛋1">彩蛋1</a></li>
+<li><a href="#彩蛋2">彩蛋2</a></li>
+<li><a href="#tips">Tips</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p><font face="微软雅黑"></p>
+
+<h2 id="题记">题记</h2>
+
+<p>上次不是要勾搭一个NAS跑NFS做vCenter的datastore么， 今天上主题OpenMediaVault（OMV）。</p>
+
+<p>其实OMV也是跑Debian的，要NFS，直接apt-get一个NFS server不香么？嗯嗯，不懂咧，真的是老了，喜欢user friendly的GUI。</p>
+
+<p>另外我对Linux就是个菜呀，想起以前领导让去我单枪匹马去项目开局，我立马表示很迷茫。领导一句话顿时开窍：不懂没关系，电话会打吧；去吧，我看好你哦&hellip;.</p>
+
+<p>现在回想起来，心里面一百个草泥马的飘过；但真的是锻炼人，辛苦但成长飞快。有些人用工作一年学到的东西浑浑噩噩的混了十年。</p>
+
+<p>有些人一直没有松懈过自己，每天进步多一点。做leader还是做油条，人生都是自己选的。</p>
+
+<p>哦哦，现在不用打电话了，Google总会了吧。</p>
+
+<h2 id="omv安装部署">OMV安装部署</h2>
+
+<p>前面说了，OMV部署在Debian上，所以你首先得有一个Debian Linux。不过人家已经ISO打包好给你了；剩下的安装，网上一堆堆教程，请参见:</p>
+
+<ul>
+<li><a href="https://www.tecmint.com/install-openmdediavault-nas-storage/">打怪指南1</a></li>
+<li><a href="https://linuxhint.com/install_openmediavault_nas/">打怪指南2</a></li>
+</ul>
+
+<p>最近OMV5已经开始稳定了（搭载Debian 10），尝鲜可以试试；稳定就用OMV4（搭载Debian 9），GUI界面上差距并不明显。</p>
+
+<p>OK，我们来重点解释一下OMV的文件结构：</p>
+
+<h3 id="硬盘-disks">硬盘 (Disks)</h3>
+
+<p>/dev/sda 第一块建议用SSD（virtual disk）用来装系统，不大20G就够了
+/dev/sdb 依次排开，做数据盘</p>
+
+<h3 id="文件系统-file-systems">文件系统 (File Systems)</h3>
+
+<p>硬盘加载完了就是格式化文件系统（ext4），一般都一个硬盘一个分区，比如/dev/sda1。</p>
+
+<p>问题来了，文件系统到底干啥吃的？<a href="https://www.kuact.com/post/2020-06-18---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---windowns-10%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8ghost%E4%B9%88/">自家打怪指南</a></p>
+
+<p>格式化完了，得挂载(Mount)。GUI的好处来了，这些操作都是通过界面完成的，敲命令行干啥。</p>
+
+<h3 id="共享文件夹-shared-folders">共享文件夹 (Shared Folders)</h3>
+
+<p>重点来了，最终用户接触到的，实际上是OMV的共享文件夹。</p>
+
+<p>root@NAS:/sharedfolders#</p>
+
+<p>这下关系明了了：共享文件夹&ndash;&gt;文件系统&ndash;&gt;硬盘存储区块。</p>
+
+<p>共享文件夹专供目录：</p>
+
+<ul>
+<li>FTP （OMV自带）</li>
+<li>SMB/CIFS (OMV自带）</li>
+<li>Docker 的各种应用（OMV插件）</li>
+<li>NFS （OMV自带）</li>
+</ul>
+
+<h2 id="omv扩展插件">OMV扩展插件</h2>
+
+<p>OMV强大之处就是可以装插件开挂，配上Docker插件（NAS三部曲3），简直疯的没边了。</p>
+
+<p>列几个好玩的</p>
+
+<ul>
+<li>SnapRAID</li>
+<li>MergerFS (在多个硬盘上自动进行共享文件空间分配)</li>
+<li>Docker (666玩起来)</li>
+<li>Transmission （Docker)</li>
+<li>Nextcloud （Docker)</li>
+<li>MariDB （Docker)</li>
+<li>PLEX （Docker)</li>
+<li>Radarr (Docker)</li>
+<li>qbittorrent (Docker)</li>
+<li>jackett (Docker)</li>
+</ul>
+
+<h2 id="snapraid-硬盘恢复">SnapRAID 硬盘恢复</h2>
+
+<p>安装使用篇参见：<a href="https://www.kuact.com/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">点我穿越门</a></p>
+
+<ul>
+<li>SnapRAID的索引文件叫：snapraid.content</li>
+<li>SnapRAID的校验文件叫：snapraid.parity</li>
+</ul>
+
+<h3 id="snapraid配置文件">SnapRAID配置文件</h3>
+
+<p>SnapRAID的配置文件存储在：/etc/snapraid.conf</p>
+
+<hr />
+
+<p>content /srv/dev-disk-by-label-nas/snapraid.content
+parity /srv/dev-disk-by-label-nas/snapraid.parity</p>
+
+<p>content /srv/dev-disk-by-label-d1/snapraid.content
+disk d1 /srv/dev-disk-by-label-d1</p>
+
+<hr />
+
+<p>配置文件的作用就是告诉SnapRAID那个是索引文件，那个是数据盘，那个是校验文件。</p>
+
+<ul>
+<li>至少一个数据文件(disk)</li>
+<li>至少两个索引文件(content)</li>
+<li>至少一个校验文件(parity)</li>
+</ul>
+
+<p>又来黄婆卖瓜了，用OMV的好处就是上面这些配置都是图形化的，费什么劲呀。</p>
+
+<h3 id="硬盘恢复流程">硬盘恢复流程</h3>
+
+<ul>
+<li>上新硬盘，加载硬盘，格式化文件系统</li>
+<li>在SnapRAID的插件界面，在drive页面指定当前数据盘文件系统到新硬盘的文件系统</li>
+<li>命令行：snapraid -d (snapraid 数据盘名字) -l fix.log fix 进行新硬盘文件恢复</li>
+<li>命令行：snapraid -d (snapraid 数据盘名字) -a check 进行新硬盘数据校验</li>
+</ul>
+
+<p>数据盘的名字就是上面配置文件的d1。</p>
+
+<ul>
+<li>#mount | grep /srv</li>
+<li>ls -lha /dev/disk/by-uuid</li>
+</ul>
+
+<p>如果你要检查日志，日志存放在用户根目录，比如/root/fix.log</p>
+
+<ul>
+<li>#cd</li>
+<li>#pwd</li>
+<li>#ls -l</li>
+</ul>
+
+<p>恢复之后，文件属性都是root，所以你要在OMV的Shared Folder页面ACL上修改共享文件的用户属性。</p>
+
+<p>旧硬盘如果挂了，你可以直接删除；如果没挂，你可以在Shared Folder页面指定新硬盘。然后你就可以unmout文件系统，并删除了。</p>
+
+<h2 id="彩蛋1">彩蛋1</h2>
+
+<p>你要是喜欢折腾，抛几个NAS方案自己去比较一下？</p>
+
+<ul>
+<li>FreeNAS</li>
+<li>NAS4Free</li>
+<li>unRIAD</li>
+</ul>
+
+<p>别问我为什呢，上面几个一个都没有用过。</p>
+
+<h2 id="彩蛋2">彩蛋2</h2>
+
+<p>如有你有兴趣折腾VMWARE， 你可以考虑一下RDM (Raw Device Mapping) 呀，这样你的OMV可以上S.M.A.R.T了，配上SnapRaid省心省力。</p>
+
+<ul>
+<li>ESXi GUI界面services 启用SSH</li>
+<li>SSH login the ESXi (root用户名)</li>
+
+<li><p>ls -l /vmfs/devices/disks <br />
+<strong>注：</strong> 找到你要RDM的硬盘，比如 t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D ；不要在此硬盘上建datastore，否则还要RDM干嘛</p></li>
+
+<li><p>vmkfstools -z /vmfs/devices/disks/t10.ATA__<strong><em>ST2000DM0012D1CH164</em></strong>_______________________________Z2F0WB1D&rdquo;/vmfs/volumes/(datastore_name)/(vm_name)/2TB_RDM_1.vmdk&rdquo; <br />
+<strong>注：</strong> RDM的关键就是一个挂载点，这里创建一个vmdk 虚拟硬盘作为其挂载点</p></li>
+
+<li><p>ESXi GUI界面VM创建硬盘，选择Existing Disk <br />
+<strong>注：</strong> VM要power off</p></li>
+</ul>
+
+<h2 id="tips">Tips</h2>
+
+<ol>
+<li>OMV官网 <a href="https://www.openmediavault.org/">点我穿越门</a></li>
+<li>OMV外挂插件手动加载 <a href="https://forum.openmediavault.org/index.php?thread/5549-omv-extras-org-plugin/">点我穿越门</a></li>
+<li>OMV外挂插件命令行 <a href="https://www.omv-extras.org//">点我穿越门</a></li>
+<li>RDM教程 <a href="https://gist.github.com/Hengjie/1520114890bebe8f805d337af4b3a064#prerequisite-knowledge">点我穿越门</a></li>
+</ol>
+
+<p><div class='align-center'>
+  <p><img src="/img/AD.jpg" alt="AD" title="AD" /></p>
+
+</div>
+</font></p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A/">天天向上</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-05-10---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B23nextcloud/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">天天向上 - NAS三部曲3：NextCloud</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2020-05-08---%E5%A4%A9%E5%A4%A9%E5%90%91%E4%B8%8A---nas%E4%B8%89%E9%83%A8%E6%9B%B21snapraid/">
+            <span class="next-text nav-default">天天向上 - NAS三部曲1：Snapraid</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://www.kuact.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2006 - 
+    2024
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">EVAN</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121805387-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121805387-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
