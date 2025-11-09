@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2024-01-22T09:00:01&#43;08:00" />
 <meta itemprop="dateModified" content="2024-01-22T09:00:01&#43;08:00" />
-<meta itemprop="wordCount" content="1533">
+<meta itemprop="wordCount" content="1543">
 
 
 
@@ -236,11 +236,13 @@
 <li>实测有线/无线都可以adb安装了APK了（呵呵，资源自己找）</li>
 </ul>
 
-<p><strong>注：</strong> 如果出现obb文件上传权限错误，可以先用adb安装apk本体，然后quest 3启动游戏。游戏启动后，其会自动创建obb空目录。这个时候在adb push obb文件到系统自动创建的空目录即可。</p>
+<p><strong>注：</strong> 如果出现obb文件上传权限错误，可以先用adb安装apk本体，然后quest 3启动游戏。游戏启动后，其会自动创建obb空目录yyy。这个时候在adb push obb文件xxx到系统自动创建的空目录即可。</p>
 
 <p>比如：</p>
 
-<p>adb push &ldquo;xxx.obb&rdquo; /sdcard/Android/obb/xxx</p>
+<p>adb push &ldquo;xxx.obb&rdquo; /sdcard/Android/obb/yyy/xxx.obb</p>
+
+<p>adb shell ls /sdcard/Android/obb/</p>
 
 <h2 id="无线串流">&ndash; 【无线串流】&ndash;</h2>
 
